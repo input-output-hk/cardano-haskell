@@ -1,0 +1,58 @@
+packages:
+  ouroboros-network/typed-protocols
+  ouroboros-network/typed-protocols-cbor
+  ouroboros-network/ouroboros-network-testing
+  ouroboros-network/network-mux
+  ouroboros-network/ouroboros-network
+  ouroboros-network/ouroboros-consensus
+  ouroboros-network/io-sim
+  ouroboros-network/io-sim-classes
+
+  cardano-ledger/cardano-ledger
+  cardano-ledger/cardano-ledger/test
+
+  cardano-ledger-specs/byron/semantics/executable-spec
+  cardano-ledger-specs/byron/ledger/executable-spec
+  cardano-ledger-specs/byron/chain/executable-spec
+  cardano-ledger-specs/shelley/chain-and-ledger/dependencies/non-integer
+  cardano-ledger-specs/shelley/chain-and-ledger/executable-spec
+  goblins/
+
+  cardano-ledger/crypto
+  cardano-ledger/crypto/test
+
+  cardano-prelude
+  cardano-prelude/test
+
+  iohk-monitoring-framework/*/*.cabal
+  iohk-monitoring-framework/plugins/*/*.cabal
+
+  cardano-base/binary
+  cardano-base/binary/test
+  cardano-base/cardano-crypto-class
+  cardano-base/slotting
+
+  cardano-crypto
+  cardano-sl-x509
+
+  cardano-shell/cardano-{shell,launcher}
+
+  cardano-node/cardano-node
+  cardano-node/cardano-config
+
+  cardano-explorer/cardano-{explorer-db,explorer-node,explorer}
+  cardano-explorer/cardano-explorer-db/test
+
+tests: True
+
+max-backjumps: 5000
+reorder-goals: True
+
+package cardano-ledger
+  flags: development
+
+package cardano-crypto-class
+  flags: development
+
+constraints:
+  graphviz == 2999.20.0.3
