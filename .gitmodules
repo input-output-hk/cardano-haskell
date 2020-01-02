@@ -1,0 +1,3 @@
+[submodule "cardano-repo-tool"]
+	path = cardano-repo-tool
+	url = https://github.com/input-output-hk/cardano-repo-tool.git
