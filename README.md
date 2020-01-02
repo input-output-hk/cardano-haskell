@@ -44,8 +44,8 @@ $ git clone git@github.com:input-output-hk/cardano-haskell.git
 
 Get the submodule (for the cardano-repo-tool)
 ```
-$ git submodule init
-$ git submodule update
+$ cd cardano-haskell/
+$ git submodule update --init
 ```
 
 Now build and install the cardano-repo-tool so it ends up on your $PATH
@@ -83,7 +83,8 @@ $ cardano-repo-tool clone-repos
 ```
 
 This will make fresh clones of all the repositories. If you want to reuse any
-of your existing checkouts then simply `mv` them into this top level
+of your existing checkouts then, before running the
+`cardano-repo-tool clone-repos` command, simply `mv` them into this top level
 repository under the expected name. Use `cardano-repo-tool list-repos` to see
 the full list of repos and their local names. The `clone-repos` sub-command
 will skip any that are already present, so it is always safe to run it again.
@@ -100,8 +101,8 @@ You can see the status of all the repositories using the command
 $ cardano-repo-tool repo-status
 ```
 
-There are also commands to update indivdual or all repos to the latest master
-(and rebase on master if there are local patches)
+There are also commands to update indivdual or all repos (and rebase if there
+are local patches)
 ```
 $ cardano-repo-tool update-repos
 ```
@@ -109,8 +110,13 @@ or for a single repo, e.g. cardano-node
 ```
 $ cardano-repo-tool update-repo -r cardano-node
 ```
-This is equivalent to using `git checkout master && git pull --rebase` within
-the individual repositories.
+This is equivalent to using `git pull --rebase` within the individual
+repositories.
+
+Note that this does not change branch. You can change branch via the normal
+git commands. You may well want to be on master for most repositories but on a
+feature branch for one or more repositories. Use
+`cardano-repo-tool repo-status` to help you keep track.
 
 
 Repository combinations
@@ -189,6 +195,47 @@ cabal build all --dry-run
 to see the current build status and what would be built. If necessary this will
 re-run the solver if any configuration changed.
 
+For the very first build a lot of dependencies will have to be built and this
+will take some time. Later builds will be much faster since cabal is very
+careful about caching. For the first build try:
+```
+$ cabal build all -j4 --keep-going
+$ cabal build all --dry-run
+```
+The `-j4` says build using 4 cores. Adjust as approprite for your system. The
+`--keep-going` tells cabal to keep building other components if possible,
+rather than stopping as soon as any single package fails to build. The second
+command will report any remaining packges that failed to build (or depended
+on packages that failed).
+
+
+System setup
+------------
+
+It is possible that `cabal configure` will fail due to missing system
+libraries. Cardano depends on numerous system libraries including openssl
+and systemd (on Linux).
+
+For example, consider the following output from `cabal configure`:
+```
+Resolving dependencies...
+cabal: Could not resolve dependencies:
+[__0] trying: cardano-binary-1.5.0 (user goal)
+[__1] trying: base-4.12.0.0/installed-4.1... (dependency of cardano-binary)
+[__2] trying: lobemo-scribe-systemd-0.1.0.0 (user goal)
+[__3] next goal: libsystemd-journal (dependency of lobemo-scribe-systemd)
+[__3] rejecting: libsystemd-journal-1.4.4 (conflict: pkg-config package
+libsystemd==209 || >209, not found in the pkg-config database)
+```
+As the error message says, `libsystemd` is not in the system's pkg-config
+database of registered system libraries. This can be resolved by installing
+it using your system's package manager. For example on Fedora-based Linux
+systems that would be
+```
+sudo dnf install systemd-devel
+```
+or the appropriate equivalent command on Debian-based or other systems.
+
 
 Building components
 -------------------
@@ -216,7 +263,7 @@ $ cabal build cardano-node:tests
 
 You can also build everything
 ```
-cabal build all
+cabal build all -j4
 ```
 
 You can see what would be built by adding `--dry-run`
