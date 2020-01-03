@@ -40,7 +40,7 @@ packages:
   cardano-node/cardano-node
   cardano-node/cardano-config
 
-  cardano-explorer/cardano-{explorer-db,explorer-node,explorer}
+  cardano-explorer/cardano-explorer-{db,node,webapi}
   cardano-explorer/cardano-explorer-db/test
 
 tests: True
