@@ -236,6 +236,11 @@ sudo dnf install systemd-devel
 ```
 or the appropriate equivalent command on Debian-based or other systems.
 
+Known packages needed on Fedora-based systems:
+ * `libpq-devel`
+ * `openssl-devel`
+ * `systemd-devel`
+
 
 Building components
 -------------------
@@ -254,9 +259,9 @@ the tests.
 
 You can also build specific components, e.g.
 ```
-$ cabal build cardano-node:exe
+$ cabal build exe:cardano-node
 ```
-or
+or categories of component
 ```
 $ cabal build cardano-node:tests
 ```
