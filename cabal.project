@@ -54,5 +54,13 @@ package cardano-ledger
 package cardano-crypto-class
   flags: development
 
+-- Note that generally we should not need any constraints here, since
+-- individual .cabal files should specify any necessary constraints.
 constraints:
-  graphviz == 2999.20.0.3
+  graphviz == 2999.20.0.3,
+
+  -- currently needed for ouroboros-consensus:byron-db-converter
+  path < 0.7,
+
+  -- currently needed for cardano-explorer-db
+  persistent-template < 2.8
