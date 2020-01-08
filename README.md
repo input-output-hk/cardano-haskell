@@ -55,7 +55,7 @@ $ cabal install
 ```
 
 Check that your `cabal` and `$PATH` configuration were set up right so that the
-tool was installed in an accessable location
+tool was installed in an accessible location
 ```
 $ cardano-repo-tool --version
 ```
