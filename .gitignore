@@ -1,6 +1,11 @@
 cabal.project.local
 cabal.project.local~
 dist-newstyle/
+*~
+\#*
+\.#*
+*.swp
+.ghc.environment.*
 
 cardano-base/
 cardano-byron-proxy/
