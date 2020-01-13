@@ -10,7 +10,12 @@ nix-tools._raw.shellFor {
     ghcid.components.exes.ghcid
   ]) ++
   (with nix-tools._raw._config._module.args.pkgs; [
+    ncurses
+    openssl
+    postgresql
+    systemd
     tmux
+    zlib
   ]);
   shellHook = ''
   alias repo=cardano-repo-tool
