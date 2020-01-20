@@ -1,17 +1,26 @@
 let
   crt = import ./cardano-repo-tool {};
-  inherit (crt) pkgs nix-tools;
+  inherit (crt) pkgs nix-tools haskellPackages;
 in
-nix-tools._raw.shellFor {
-  packages    = ps: with ps; [ cardano-repo-tool ];
-  buildInputs = (with nix-tools._raw; [
-    cabal-install.components.exes.cabal
+haskellPackages.shellFor rec {
+  name = "cardano-haskell";
+  packages = ps: with ps; [
+    cardano-repo-tool
+  ];
+  nativeBuildInputs = buildInputs;
+  buildInputs = (with haskellPackages; [
     cardano-repo-tool.components.exes.cardano-repo-tool
-    ghcid.components.exes.ghcid
+    (pkgs.haskell-nix.hackage-package {
+       name = "ghcid"; version = "0.8.1"; }).components.exes.ghcid
+    (pkgs.haskell-nix.hackage-package {
+       name = "hlint"; version = "2.2.7"; }).components.exes.hlint
+    (pkgs.haskell-nix.hackage-package {
+       name = "cabal-install"; version = "3.0.0.0"; modules = [{reinstallableLibGhc = true;}]; }).components.exes.cabal
   ]) ++
-  (with nix-tools._raw._config._module.args.pkgs; [
+  (with pkgs; [
     ncurses
     openssl
+    pkgconfig
     postgresql
     systemd
     tmux
