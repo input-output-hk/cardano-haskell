@@ -7,7 +7,6 @@ git submodule update --init
 nix-shell \
 --show-trace \
 --run '
-      unset CABAL_CONFIG
       cardano-repo-tool clone-repos
       cabal new-update
       cabal new-configure --with-compiler ghc-8.6.5 -O0
