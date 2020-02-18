@@ -1,8 +1,9 @@
 packages:
   ouroboros-network/typed-protocols
-  ouroboros-network/typed-protocols-cbor
-  ouroboros-network/ouroboros-network-testing
+  ouroboros-network/typed-protocols-examples
   ouroboros-network/network-mux
+  ouroboros-network/ouroboros-network-framework
+  ouroboros-network/ouroboros-network-testing
   ouroboros-network/ouroboros-network
   ouroboros-network/ouroboros-consensus
   ouroboros-network/io-sim
@@ -58,3 +59,4 @@ package cardano-crypto-class
 -- Note that generally we should not need any constraints here, since
 -- individual .cabal files should specify any necessary constraints.
 constraints:
+  graphviz == 2999.20.0.3
