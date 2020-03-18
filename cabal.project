@@ -1,4 +1,5 @@
 packages:
+  ouroboros-network/Win32-network
   ouroboros-network/typed-protocols
   ouroboros-network/typed-protocols-examples
   ouroboros-network/network-mux
@@ -46,9 +47,12 @@ packages:
   cardano-node/cardano-node
   cardano-node/cardano-config
 
-  cardano-explorer/cardano-explorer-{db,node,webapi}
-  cardano-explorer/cardano-explorer-db/test
-  cardano-explorer/cardano-tx-submit
+  cardano-db-sync/cardano-db
+  cardano-db-sync/cardano-db/test
+  cardano-db-sync/cardano-db-sync
+  cardano-db-sync/cardano-db-sync-extended
+
+  cardano-rest/{exlorer,submit}-api
 
 tests: True
 
