@@ -46,6 +46,10 @@ packages:
   cardano-node/cardano-node
   cardano-node/cardano-config
 
+  cardano-db-sync/cardano-db
+  cardano-db-sync/cardano-db/test
+  cardano-db-sync/cardano-db-sync
+  cardano-db-sync/cardano-db-sync-extended
 
 tests: True
 
