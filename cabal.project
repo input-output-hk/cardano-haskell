@@ -51,6 +51,8 @@ packages:
   cardano-db-sync/cardano-db-sync
   cardano-db-sync/cardano-db-sync-extended
 
+  cardano-rest/{exlorer,submit}-api
+
 tests: True
 
 max-backjumps: 5000
