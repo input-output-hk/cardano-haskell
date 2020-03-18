@@ -46,9 +46,6 @@ packages:
   cardano-node/cardano-node
   cardano-node/cardano-config
 
-  cardano-explorer/cardano-explorer-{db,node,webapi}
-  cardano-explorer/cardano-explorer-db/test
-  cardano-explorer/cardano-tx-submit
 
 tests: True
 

@@ -5,7 +5,6 @@ dist-newstyle/
 cardano-base/
 cardano-byron-proxy/
 cardano-crypto/
-cardano-explorer/
 cardano-ledger-specs/
 cardano-ledger/
 cardano-node/
