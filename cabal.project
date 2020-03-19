@@ -40,12 +40,12 @@ packages:
   cardano-base/slotting
 
   cardano-crypto
-  cardano-sl-x509
 
-  cardano-shell/cardano-{shell,launcher}
+  cardano-shell/cardano-shell
 
   cardano-node/cardano-node
   cardano-node/cardano-config
+  cardano-node/cardano-tx-generator
 
   cardano-db-sync/cardano-db
   cardano-db-sync/cardano-db/test
@@ -54,10 +54,15 @@ packages:
 
   cardano-rest/{exlorer,submit}-api
 
+index-state: 2020-01-31T21:11:24Z
+
 tests: True
 
 max-backjumps: 5000
 reorder-goals: True
+
+package ouroboros-network
+  flags: cddl
 
 package cardano-ledger
   flags: development
@@ -68,4 +73,15 @@ package cardano-crypto-class
 -- Note that generally we should not need any constraints here, since
 -- individual .cabal files should specify any necessary constraints.
 constraints:
-  graphviz == 2999.20.0.3
+  graphviz == 2999.20.0.3,
+  hedgehog >= 1.0.2
+
+source-repository-package
+  type: git
+  location: https://github.com/advancedtelematic/quickcheck-state-machine
+  tag: 2bf37003ca1c0c57e4354610d7c47da0a0e77b5c
+  --sha256: 1cr38aplhmwczrjc2xqya3mjp0zkbk20jjhhzk0spydbcsbi4l5l
+
+package quickcheck-state-machine
+  tests: False
+
