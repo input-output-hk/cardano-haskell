@@ -46,6 +46,7 @@ packages:
 
   cardano-node/cardano-node
   cardano-node/cardano-config
+  cardano-node/cardano-tx-generator
 
   cardano-db-sync/cardano-db
   cardano-db-sync/cardano-db/test
@@ -67,5 +68,8 @@ package cardano-crypto-class
 
 -- Note that generally we should not need any constraints here, since
 -- individual .cabal files should specify any necessary constraints.
+-- This should be reserved for indirect dependencies which require specific
+-- bounds.
 constraints:
-  graphviz == 2999.20.0.3
+    graphviz == 2999.20.0.3
+  , unliftio-core < 0.2.0.0
