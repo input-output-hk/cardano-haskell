@@ -1,19 +1,21 @@
 Workflow for building the Cardano (Haskell) node and related components
 =======================================================================
 
-The Cardano (Haskell) implementation is made up of numerous repositories. This
-has some advantages ofer a mono-repo, and some disadvantages. The intention of
-this repository is to gain some of the benefits of a mono-repo while keeping
-the multi-repo approach.
+The purpose of this repository is to provide a convenient workflow *for
+developers working on Cardano* to (re)build any or all of the components.
 
-The purpose of this repository is to provide a convenient workflow for
-developers working on Cardano to (re)build any or all of the components. This
-makes it easier and quicker to check if downstream components are affected by
+This developer workflow is **not intended to provide reprodcible builds** nor
+to replace the scheme used for CI. If you want to build the latest released
+version of `cardano-node`, then this is not the repository you are looking for.
+For that, just build from within that repository, which contain reproducible
+snapshots of all dependencies.
+
+The intention of this repository is for developers working on Cardano to gain
+some of the benefits of a mono-repo while keeping the multi-repo approach.
+It makes it easier and quicker to check if downstream components are affected by
 a change in a component being worked on. For example, while working on the
 cardano ledger library it is possible to rebuild (and retest) the node, proxy
 and explorer to check if they also need adjustments.
-
-This developer workflow is not intended to replace the scheme used for CI.
 
 
 Approach
