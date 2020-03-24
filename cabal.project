@@ -52,7 +52,7 @@ packages:
   cardano-db-sync/cardano-db-sync
   cardano-db-sync/cardano-db-sync-extended
 
-  cardano-rest/{exlorer,submit}-api
+  cardano-rest/{explorer,submit}-api
 
 index-state: 2020-01-31T21:11:24Z
 
