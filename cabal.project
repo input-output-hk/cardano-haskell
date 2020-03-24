@@ -12,6 +12,7 @@ packages:
   ouroboros-network/ouroboros-consensus-cardano
   ouroboros-network/ouroboros-consensus-byron
   ouroboros-network/ouroboros-consensus-byronspec
+  ouroboros-network/ouroboros-consensus-shelley
   ouroboros-network/io-sim
   ouroboros-network/io-sim-classes
 
@@ -23,6 +24,7 @@ packages:
   cardano-ledger-specs/byron/chain/executable-spec
   cardano-ledger-specs/shelley/chain-and-ledger/dependencies/non-integer
   cardano-ledger-specs/shelley/chain-and-ledger/executable-spec
+  cardano-ledger-specs/shelley/chain-and-ledger/executable-spec/test
   goblins/
 
   cardano-ledger/crypto
@@ -85,3 +87,5 @@ source-repository-package
 package quickcheck-state-machine
   tests: False
 
+package cardano-shell
+  tests: False
