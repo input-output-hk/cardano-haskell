@@ -47,7 +47,6 @@ packages:
 
   cardano-node/cardano-node
   cardano-node/cardano-config
-  cardano-node/cardano-tx-generator
 
   cardano-db-sync/cardano-db
   cardano-db-sync/cardano-db/test
