@@ -1,0 +1,103 @@
+name: cardano-1.9.3
+
+resolver: lts-14.25
+
+packages:
+- base16-0.1.2.1
+- base58-bytestring-0.1.0
+- base64-0.4.1
+- canonical-json-0.6.0.0
+- connection-0.3.1
+- generic-monoid-0.1.0.0
+- gray-code-0.3.1
+- katip-0.8.3.0
+- libsystemd-journal-1.4.4
+- moo-1.2
+- network-3.1.0.1
+- prometheus-2.1.2
+- statistics-linreg-0.3
+- streaming-binary-0.3.0.1
+- time-units-1.0.0
+- Unique-0.4.7.6
+- Win32-2.6.2.0
+
+- git: https://github.com/well-typed/cborg
+  commit: 42a83192749774268337258f4f94c97584b80ca6
+  subdirs:
+  - cborg
+
+- git: https://github.com/input-output-hk/cardano-base
+  commit: 1222078176fe74d5ce17f2a8343c6588233a49a3
+  subdirs:
+  - binary
+  - binary/test
+  - cardano-crypto-class
+  - slotting
+
+- git: https://github.com/input-output-hk/cardano-crypto
+  commit: 2547ad1e80aeabca2899951601079408becbc92c
+
+- git: https://github.com/input-output-hk/cardano-ledger
+  commit: 512c26a66a6a63278846646b81bf8eadcd4ae99c
+  subdirs:
+  - cardano-ledger
+  - cardano-ledger/test
+  - crypto
+  - crypto/test
+
+- git: https://github.com/input-output-hk/cardano-ledger-specs
+  commit: 156086266486da710c5037c11f83d2112434926f
+  subdirs:
+  - byron/semantics/executable-spec # small-steps
+  - byron/ledger/executable-spec    # cs-ledger
+  - byron/chain/executable-spec     # cs-blockchain
+  - shelley/chain-and-ledger/dependencies/non-integer
+  - shelley/chain-and-ledger/executable-spec
+  - shelley/chain-and-ledger/executable-spec/test
+
+- git: https://github.com/input-output-hk/cardano-prelude
+  commit: 3ac22a2fda11ca7131a011a9ea48fcbfdc26d6b3
+  subdirs:
+  - .
+  - test
+
+- git: https://github.com/input-output-hk/cardano-shell
+  commit: bc3563c952d9f3635e1c76749b86b0a24f7e4b83
+  subdirs:
+  - cardano-shell
+
+- git: https://github.com/input-output-hk/cardano-sl-x509
+  commit: 43a036c5bbe68ca2e9cbe611eab7982e2348fe49
+
+- git: https://github.com/input-output-hk/goblins
+  commit: 26d35ad52fe9ade3391532dbfeb2f416f07650bc
+
+- git: https://github.com/input-output-hk/iohk-monitoring-framework
+  commit: 10877fbae54aa7a4c04ae3b5d87c825a4019e9e9
+  subdirs:
+  - contra-tracer
+  - iohk-monitoring
+  - plugins/backend-aggregation
+  - plugins/backend-ekg
+  - plugins/backend-monitoring
+  - plugins/scribe-systemd
+  - tracer-transformers
+
+- git: https://github.com/input-output-hk/ouroboros-network
+  commit: 7e89518148ebb11d9ee6b973c394a69713961de6
+  subdirs:
+  - io-sim
+  - io-sim-classes
+  - network-mux
+  - ntp-client
+  - ouroboros-consensus
+  - ouroboros-consensus-byron
+  - ouroboros-consensus-cardano
+  - ouroboros-consensus-shelley
+  - ouroboros-consensus/ouroboros-consensus-mock
+  - ouroboros-network
+  - ouroboros-network-framework
+  - ouroboros-network-testing
+  - typed-protocols
+  - typed-protocols-examples
+  - Win32-network
