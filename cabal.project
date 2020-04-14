@@ -58,7 +58,7 @@ packages:
 
 --  cardano-wallet/lib/*/*.cabal
 
-index-state: 2020-01-31T21:11:24Z
+index-state: 2020-03-31T22:47:49Z
 
 tests: True
 
