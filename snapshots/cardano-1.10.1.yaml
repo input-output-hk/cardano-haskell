@@ -117,14 +117,16 @@ packages:
   - io-sim-classes
   - network-mux
   - ntp-client
+  - Win32-network
   - ouroboros-consensus
   - ouroboros-consensus-byron
+  - ouroboros-consensus-byronspec
   - ouroboros-consensus-cardano
   - ouroboros-consensus-shelley
   - ouroboros-consensus/ouroboros-consensus-mock
+  - ouroboros-consensus/ouroboros-consensus-test-infra
   - ouroboros-network
   - ouroboros-network-framework
   - ouroboros-network-testing
   - typed-protocols
   - typed-protocols-examples
-  - Win32-network

@@ -118,9 +118,11 @@ packages:
   - ntp-client
   - ouroboros-consensus
   - ouroboros-consensus-byron
+  - ouroboros-consensus-byronspec
   - ouroboros-consensus-cardano
   - ouroboros-consensus-shelley
   - ouroboros-consensus/ouroboros-consensus-mock
+  - ouroboros-consensus/ouroboros-consensus-test-infra
   - ouroboros-network
   - ouroboros-network-framework
   - ouroboros-network-testing
