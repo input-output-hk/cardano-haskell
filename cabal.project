@@ -46,6 +46,7 @@ packages:
 
   cardano-shell/cardano-shell
 
+  cardano-node/cardano-api
   cardano-node/cardano-node
   cardano-node/cardano-config
 
