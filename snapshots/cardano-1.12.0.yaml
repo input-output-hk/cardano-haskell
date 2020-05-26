@@ -17,6 +17,7 @@ packages:
 - data-clist-0.1.2.2
 - dns-3.0.4
 - generic-monoid-0.1.0.0
+- generics-sop-0.5.1.0
 - gray-code-0.3.1
 - hedgehog-1.0.2
 - hspec-2.7.0
