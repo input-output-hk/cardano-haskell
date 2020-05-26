@@ -37,6 +37,7 @@ packages:
 - snap-server-1.1.1.1
 - statistics-linreg-0.3
 - streaming-binary-0.3.0.1
+- systemd-2.3.0
 - tasty-hedgehog-1.0.0.2
 - text-1.2.4.0
 - text-zipper-0.10.1
@@ -48,13 +49,8 @@ packages:
 - Win32-2.6.2.0
 - word-wrap-0.4.1
 
-- git: https://github.com/well-typed/cborg
-  commit: 42a83192749774268337258f4f94c97584b80ca6
-  subdirs:
-  - cborg
-
 - git: https://github.com/input-output-hk/cardano-base
-  commit: c845509c307af9df956ef203ac8ad67fe4d5d065
+  commit: 9d6e0f5efc8fe1bfff4825b3f52e80cdceac07b0
   subdirs:
   - binary
   - binary/test
@@ -64,26 +60,22 @@ packages:
 - git: https://github.com/input-output-hk/cardano-crypto
   commit: 2547ad1e80aeabca2899951601079408becbc92c
 
-- git: https://github.com/input-output-hk/cardano-ledger
-  commit: 9ee8a6630a8719ba54554c3ce10c555bf5dff4cc
-  subdirs:
-  - cardano-ledger
-  - cardano-ledger/test
-  - crypto
-  - crypto/test
-
 - git: https://github.com/input-output-hk/cardano-ledger-specs
-  commit: 1b2a06df9a710f5cc9b511b6ae39c23bcfd04486
+  commit: b687fa55369f480cb134c007e534662bef961cea
   subdirs:
-  - semantics/executable-spec # small-steps
-  - byron/ledger/executable-spec    # cs-ledger
-  - byron/chain/executable-spec     # cs-blockchain
+  - byron/ledger/impl
+  - byron/crypto
+  - byron/ledger/impl/test
+  - byron/crypto/test
+  - byron/chain/executable-spec
+  - byron/ledger/executable-spec
+  - semantics/executable-spec
   - shelley/chain-and-ledger/dependencies/non-integer
   - shelley/chain-and-ledger/executable-spec
   - shelley/chain-and-ledger/executable-spec/test
 
 - git: https://github.com/input-output-hk/cardano-node
-  commit: 4b557bbeb2b43f0be6b97cb7f46b1723728447f0
+  commit: f6ef186d1f7280585a245c8565d92117133cf359
   subdirs:
   - cardano-api
   - cardano-cli
@@ -91,7 +83,7 @@ packages:
   - cardano-node
 
 - git: https://github.com/input-output-hk/cardano-prelude
-  commit: bd7eb69d27bfaee46d435bc1d2720520b1446426
+  commit: 594f587bfab626a405ac532112cc0b942ad3efdb
   subdirs:
   - .
   - test
@@ -120,7 +112,7 @@ packages:
   - plugins/backend-trace-forwarder
 
 - git: https://github.com/input-output-hk/ouroboros-network
-  commit: 18ef245af8181cf3bc208b71c7c4f8502137dbbb
+  commit: 9d9754c9ddcfff82b27c371a545aa4680d86d996
   subdirs:
   - io-sim
   - io-sim-classes
@@ -139,3 +131,13 @@ packages:
   - ouroboros-network-testing
   - typed-protocols
   - typed-protocols-examples
+
+- git: https://github.com/well-typed/cborg
+  commit: 42a83192749774268337258f4f94c97584b80ca6
+  subdirs:
+  - cborg
+
+- git: https://github.com/snoyberg/http-client.git
+  commit: 1a75bdfca014723dd5d40760fad854b3f0f37156
+  subdirs:
+  - http-client
