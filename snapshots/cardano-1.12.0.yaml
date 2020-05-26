@@ -50,7 +50,7 @@ packages:
 - word-wrap-0.4.1
 
 - git: https://github.com/input-output-hk/cardano-base
-  commit: 9d6e0f5efc8fe1bfff4825b3f52e80cdceac07b0
+  commit: 9b82346b78e212fcd3e795faf9dd7f3266ab7297
   subdirs:
   - binary
   - binary/test
