@@ -13,15 +13,15 @@ packages:
   ouroboros-network/ouroboros-consensus-byron
   ouroboros-network/ouroboros-consensus-byronspec
   ouroboros-network/ouroboros-consensus-shelley
+  ouroboros-network/ouroboros-consensus-shelley-test
   ouroboros-network/io-sim
   ouroboros-network/io-sim-classes
   ouroboros-network/ntp-client
 
-  cardano-ledger/cardano-ledger
-  cardano-ledger/cardano-ledger/test
-
   cardano-ledger-specs/semantics/executable-spec
   cardano-ledger-specs/byron/ledger/executable-spec
+  cardano-ledger-specs/byron/ledger/impl
+  cardano-ledger-specs/byron/ledger/impl/test
   cardano-ledger-specs/byron/chain/executable-spec
   cardano-ledger-specs/shelley/chain-and-ledger/dependencies/non-integer
   cardano-ledger-specs/shelley/chain-and-ledger/executable-spec
@@ -61,10 +61,6 @@ packages:
   cardano-db-sync/cardano-db/test
   cardano-db-sync/cardano-db-sync
   cardano-db-sync/cardano-db-sync-extended
-
-  cardano-rest/{explorer,submit}-api
-
---  cardano-wallet/lib/*/*.cabal
 
 index-state: 2020-03-31T22:47:49Z
 
