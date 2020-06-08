@@ -16,6 +16,7 @@ packages:
   ouroboros-network/io-sim
   ouroboros-network/io-sim-classes
   ouroboros-network/ntp-client
+  ouroboros-network/cardano-client
 
   cardano-ledger/cardano-ledger
   cardano-ledger/cardano-ledger/test
