@@ -25,7 +25,7 @@ packages:
 - hspec-discover-2.7.0
 - io-streams-1.5.1.0
 - io-streams-haproxy-1.0.1.0
-- katip-0.8.3.0
+- katip-0.8.4.0
 - libsystemd-journal-1.4.4
 - micro-recursion-schemes-5.0.2.2
 - moo-1.2
