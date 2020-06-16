@@ -11,12 +11,14 @@ packages:
   ouroboros-network/ouroboros-consensus/ouroboros-consensus-test-infra
   ouroboros-network/ouroboros-consensus-cardano
   ouroboros-network/ouroboros-consensus-byron
+  ouroboros-network/ouroboros-consensus-byron-test
   ouroboros-network/ouroboros-consensus-byronspec
   ouroboros-network/ouroboros-consensus-shelley
   ouroboros-network/ouroboros-consensus-shelley-test
   ouroboros-network/io-sim
   ouroboros-network/io-sim-classes
   ouroboros-network/ntp-client
+  ouroboros-network/cardano-client
 
   cardano-ledger-specs/semantics/executable-spec
   cardano-ledger-specs/byron/ledger/executable-spec
@@ -89,12 +91,6 @@ package cardano-crypto-class
 constraints:
   graphviz == 2999.20.0.3,
   hedgehog >= 1.0.2
-
-source-repository-package
-  type: git
-  location: https://github.com/advancedtelematic/quickcheck-state-machine
-  tag: 2bf37003ca1c0c57e4354610d7c47da0a0e77b5c
-  --sha256: 1cr38aplhmwczrjc2xqya3mjp0zkbk20jjhhzk0spydbcsbi4l5l
 
 package quickcheck-state-machine
   tests: False
