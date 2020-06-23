@@ -49,6 +49,7 @@ packages:
   cardano-base/binary/test
   cardano-base/cardano-crypto-class
   cardano-base/cardano-crypto-praos
+  cardano-base/cardano-crypto-tests
   cardano-base/slotting
 
   cardano-crypto
@@ -119,4 +120,3 @@ source-repository-package
   location: https://github.com/input-output-hk/persistent
   tag: 107787ecc4c8a112375493cd66574f788f950fce
   subdir: persistent-template
-
