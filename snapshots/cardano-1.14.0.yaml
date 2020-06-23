@@ -58,6 +58,7 @@ packages:
   - binary/test
   - cardano-crypto-class
   - slotting
+  - cardano-crypto-praos
 
 - git: https://github.com/input-output-hk/cardano-crypto
   commit: 2547ad1e80aeabca2899951601079408becbc92c
