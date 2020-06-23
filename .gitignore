@@ -3,6 +3,7 @@ cabal.project.local~
 dist-newstyle/
 
 cardano-base/
+cardano-benchmarking/
 cardano-byron-proxy/
 cardano-crypto/
 cardano-db-sync/
