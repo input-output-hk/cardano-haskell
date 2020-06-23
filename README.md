@@ -36,7 +36,7 @@ Make sure you have `cabal` version 3.0 or later installed
 ```
 $ cabal --version
 cabal-install version 3.0.0.0
-compiled using version 3.0.0.0 of the Cabal library 
+compiled using version 3.0.0.0 of the Cabal library
 ```
 
 Clone this repository, if you have not done so already:
@@ -68,7 +68,7 @@ If your environment was not set up right, try either:
    `~/.cabal/bin`
 
 2. adjust your `~/.cabal.config` to set the `installdir` to a location that is
-   already on your `$PATH` such as `/home/yourusername/bin` or 
+   already on your `$PATH` such as `/home/yourusername/bin` or
    `/home/yourusername/.local/bin`.
 
 And then install again.
@@ -242,6 +242,8 @@ Known packages needed on Fedora-based systems:
  * `libpq-devel`
  * `openssl-devel`
  * `systemd-devel`
+ * `libsodium`
+ * `libsodium-dev`
 
 
 Building components
@@ -285,5 +287,5 @@ $ cabal repl ouroboros-network:tests
 
 You can also run test suites
 ```
-$ cabal test --test-show-details=direct 
+$ cabal test --test-show-details=direct
 ```
