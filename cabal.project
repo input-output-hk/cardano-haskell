@@ -21,17 +21,17 @@ packages:
   ouroboros-network/cardano-client
 
   cardano-ledger-specs/semantics/executable-spec
+  cardano-ledger-specs/semantics/small-steps-test
   cardano-ledger-specs/byron/ledger/executable-spec
   cardano-ledger-specs/byron/ledger/impl
   cardano-ledger-specs/byron/ledger/impl/test
   cardano-ledger-specs/byron/chain/executable-spec
+  cardano-ledger-specs/byron/crypto
+  cardano-ledger-specs/byron/crypto/test
   cardano-ledger-specs/shelley/chain-and-ledger/dependencies/non-integer
   cardano-ledger-specs/shelley/chain-and-ledger/executable-spec
   cardano-ledger-specs/shelley/chain-and-ledger/executable-spec/test
   goblins/
-
-  cardano-ledger/crypto
-  cardano-ledger/crypto/test
 
   cardano-prelude
   cardano-prelude/test
@@ -66,7 +66,7 @@ packages:
   cardano-db-sync/cardano-db-sync
   cardano-db-sync/cardano-db-sync-extended
 
-index-state: 2020-03-31T22:47:49Z
+index-state: 2020-07-14T22:50:55Z
 
 tests: True
 
@@ -89,7 +89,19 @@ package cardano-crypto-class
   flags: development
 
 package cardano-crypto-praos
-  flags: -external-libsodium-vrf
+  flags: development -external-libsodium-vrf
+
+package cardano-crypto-tests
+  flags: development
+
+package small-steps-test
+  flags: development
+
+package shelley-spec-ledger
+  flags: development
+
+package shelley-spec-ledger-test
+  flags: development
 
 -- Note that generally we should not need any constraints here, since
 -- individual .cabal files should specify any necessary constraints.
