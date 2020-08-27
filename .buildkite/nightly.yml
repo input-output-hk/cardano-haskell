@@ -1,0 +1,9 @@
+env:
+  NIX_PATH: "nixpkgs=https://nixos.org/channels/nixos-20.09/nixexprs.tar.xz"
+  compiler: "ghc865"
+
+steps:
+  - label: 'Build master branch of everything'
+    command: 'nix-shell --argstr compiler $compiler --run ./build.sh'
+    agents:
+      system: x86_64-linux
