@@ -7,14 +7,16 @@ packages:
   ouroboros-network/ouroboros-network-testing
   ouroboros-network/ouroboros-network
   ouroboros-network/ouroboros-consensus
-  ouroboros-network/ouroboros-consensus/ouroboros-consensus-mock
-  ouroboros-network/ouroboros-consensus/ouroboros-consensus-test-infra
-  ouroboros-network/ouroboros-consensus-cardano
   ouroboros-network/ouroboros-consensus-byron
   ouroboros-network/ouroboros-consensus-byron-test
   ouroboros-network/ouroboros-consensus-byronspec
+  ouroboros-network/ouroboros-consensus-cardano
+  ouroboros-network/ouroboros-consensus-cardano-test
+  ouroboros-network/ouroboros-consensus-mock
+  ouroboros-network/ouroboros-consensus-mock-test
   ouroboros-network/ouroboros-consensus-shelley
   ouroboros-network/ouroboros-consensus-shelley-test
+  ouroboros-network/ouroboros-consensus-test
   ouroboros-network/io-sim
   ouroboros-network/io-sim-classes
   ouroboros-network/ntp-client
@@ -108,9 +110,6 @@ package shelley-spec-ledger-test
 constraints:
   graphviz == 2999.20.0.3,
   hedgehog >= 1.0.2
-
-package quickcheck-state-machine
-  tests: False
 
 package cardano-shell
   tests: False
