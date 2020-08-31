@@ -111,9 +111,6 @@ constraints:
   graphviz == 2999.20.0.3,
   hedgehog >= 1.0.2
 
-package quickcheck-state-machine
-  tests: False
-
 package cardano-shell
   tests: False
 
