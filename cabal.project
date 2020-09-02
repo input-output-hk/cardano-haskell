@@ -48,6 +48,10 @@ packages:
   cardano-db-sync/cardano-db-sync
   cardano-db-sync/cardano-db-sync-extended
 
+  cardano-wallet/lib/*/*.cabal
+  cardano-addresses/*/*.cabal
+  cardano-transactions
+
 index-state: 2020-07-14T22:50:55Z
 
 tests: True
@@ -90,6 +94,10 @@ package shelley-spec-ledger-test
 constraints:
   graphviz == 2999.20.0.3,
   hedgehog >= 1.0.2
+
+-- Relax overly strict bounds on aeson in these packages which are
+-- deps on cardano-addresses.
+allow-newer: hjsonschema:aeson, hjsonpointer:aeson
 
 package cardano-shell
   tests: False
