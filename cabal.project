@@ -1,26 +1,5 @@
 packages:
-  ouroboros-network/Win32-network
-  ouroboros-network/typed-protocols
-  ouroboros-network/typed-protocols-examples
-  ouroboros-network/network-mux
-  ouroboros-network/ouroboros-network-framework
-  ouroboros-network/ouroboros-network-testing
-  ouroboros-network/ouroboros-network
-  ouroboros-network/ouroboros-consensus
-  ouroboros-network/ouroboros-consensus-byron
-  ouroboros-network/ouroboros-consensus-byron-test
-  ouroboros-network/ouroboros-consensus-byronspec
-  ouroboros-network/ouroboros-consensus-cardano
-  ouroboros-network/ouroboros-consensus-cardano-test
-  ouroboros-network/ouroboros-consensus-mock
-  ouroboros-network/ouroboros-consensus-mock-test
-  ouroboros-network/ouroboros-consensus-shelley
-  ouroboros-network/ouroboros-consensus-shelley-test
-  ouroboros-network/ouroboros-consensus-test
-  ouroboros-network/io-sim
-  ouroboros-network/io-sim-classes
-  ouroboros-network/ntp-client
-  ouroboros-network/cardano-client
+  ouroboros-network/*/*.cabal
 
   cardano-ledger-specs/semantics/executable-spec
   cardano-ledger-specs/semantics/small-steps-test
