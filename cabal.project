@@ -55,34 +55,34 @@ max-backjumps: 5000
 reorder-goals: True
 
 package ouroboros-network
-  flags: cddl
+  flags: +cddl
 
 package cardano-binary
-  flags: development
+  flags: +development
 
 package cardano-ledger
-  flags: development
+  flags: +development
 
 package cardano-crypto-wrapper
-  flags: development
+  flags: +development
 
 package cardano-crypto-class
-  flags: development
+  flags: +development
 
 package cardano-crypto-praos
-  flags: development -external-libsodium-vrf
+  flags: +development -external-libsodium-vrf
 
 package cardano-crypto-tests
-  flags: development
+  flags: +development
 
 package small-steps-test
-  flags: development
+  flags: +development
 
 package shelley-spec-ledger
-  flags: development
+  flags: +development
 
 package shelley-spec-ledger-test
-  flags: development
+  flags: +development
 
 -- Note that generally we should not need any constraints here, since
 -- individual .cabal files should specify any necessary constraints.
