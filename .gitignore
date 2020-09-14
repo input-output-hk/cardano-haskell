@@ -2,6 +2,7 @@ cabal.project.local
 cabal.project.local~
 dist-newstyle/
 
+cardano-addresses/
 cardano-base/
 cardano-benchmarking/
 cardano-byron-proxy/
@@ -14,6 +15,7 @@ cardano-node/
 cardano-prelude/
 cardano-shell/
 cardano-sl-x509/
+cardano-transactions/
 cardano-wallet/
 goblins/
 iohk-monitoring-framework/
