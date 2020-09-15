@@ -1,5 +1,4 @@
-# Based off 1.19.1, but contains cardano-node#1797 until this PR becomes obsolete / superseded by the new metadata implementation.
-name: cardano-1.19.1-patched
+name: cardano-1.20.0
 
 resolver: lts-14.25
 
@@ -37,6 +36,7 @@ packages:
 - micro-recursion-schemes-5.0.2.2
 - moo-1.2
 - network-3.1.1.1
+- partial-order-0.2.0.0
 - primitive-0.7.1.0
 - prometheus-2.1.2
 - protolude-0.3.0
@@ -56,6 +56,7 @@ packages:
 - th-lift-instances-0.1.14
 - time-units-1.0.0
 - transformers-except-0.1.1
+- unordered-containers-0.2.12.0
 - Unique-0.4.7.6
 - word-wrap-0.4.1
 - websockets-0.12.6.1
@@ -74,7 +75,7 @@ packages:
   commit: 2547ad1e80aeabca2899951601079408becbc92c
 
 - git: https://github.com/input-output-hk/cardano-ledger-specs
-  commit: 74188f62ff743c690bdf287f7fa18eaa2ee354d4
+  commit: 4edcdab87510b2657c62bcf14035817ce6e23455
   subdirs:
   # small-steps
   - semantics/executable-spec
@@ -92,12 +93,13 @@ packages:
   - shelley/chain-and-ledger/shelley-spec-ledger-test
 
 - git: https://github.com/input-output-hk/cardano-node
-  commit: eac29083ef25dc619f15854623275fb37e63d2b8
+  commit: 1f2f51164b53b9b775c03ac9f1e23e7b70c74b05
   subdirs:
   - cardano-api
   - cardano-cli
   - cardano-config
   - cardano-node
+  - hedgehog-extras
 
 - git: https://github.com/input-output-hk/cardano-prelude
   commit: 0c5b0a6619fadf22f4d62a12154e181a6d035c1c
@@ -112,7 +114,7 @@ packages:
   commit: cde90a2b27f79187ca8310b6549331e59595e7ba
 
 - git: https://github.com/input-output-hk/iohk-monitoring-framework
-  commit: 8f2086aff6b315b41a39b727f860c3477205ed8a
+  commit: 743f266cfe5fff11d18602faf510f22a544ea295
   subdirs:
   - contra-tracer
   - iohk-monitoring
@@ -124,7 +126,7 @@ packages:
   - plugins/backend-trace-forwarder
 
 - git: https://github.com/input-output-hk/ouroboros-network
-  commit: f0eb6e439e7c0121476ded5e88d2f638e8aa36ac
+  commit: f56e5d7ad2ebf5f8750f13a430bb93f8036f5e9d
   subdirs:
   - io-sim
   - io-sim-classes
