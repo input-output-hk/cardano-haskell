@@ -52,7 +52,7 @@ packages:
   cardano-addresses/*/*.cabal
   cardano-transactions
 
-index-state: 2020-07-14T22:50:55Z
+index-state: 2020-10-06T21:19:33Z
 
 tests: True
 
