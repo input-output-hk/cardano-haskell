@@ -97,10 +97,13 @@ constraints:
   , hedgehog >= 1.0.2
   -- dependency of systemd-2.3.0
   , network >= 3.1.1.1
+  -- choose versions that work with base >= 4.12
+  , hjsonpointer >= 1.5.0
+  , hjsonschema >= 1.10.0
 
 -- Relax overly strict bounds on aeson in these packages which are
--- deps on cardano-addresses.
-allow-newer: hjsonschema:aeson, hjsonpointer:aeson
+-- deps of cardano-addresses.
+allow-newer: hjsonschema:*, hjsonpointer:aeson
 
 package cardano-shell
   tests: False
