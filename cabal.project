@@ -24,8 +24,9 @@ packages:
   iohk-monitoring-framework/examples
   iohk-monitoring-framework/plugins/*/*.cabal
 
-  cardano-benchmarking/cardano-rt-view
-  cardano-benchmarking/cardano-tx-generator
+  -- Removed from cardano-repo-tool
+  -- cardano-benchmarking/cardano-rt-view
+  -- cardano-benchmarking/cardano-tx-generator
 
   cardano-base/binary
   cardano-base/binary/test
