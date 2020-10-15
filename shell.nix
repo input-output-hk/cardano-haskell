@@ -19,7 +19,7 @@ mkShell rec {
 
   libs = [
     bzip2
-    libsodium  # note: is upstream release version
+    libsodium-vrf
     lzma
     ncurses
     openssl
@@ -32,6 +32,19 @@ mkShell rec {
   ++ lib.optionals stdenv.isDarwin (with darwin.apple_sdk.frameworks; [
     Cocoa CoreServices libcxx libiconv
   ]);
+
+  libsodium-vrf = libsodium.overrideAttrs (oldAttrs: {
+    name = "libsodium-1.0.18-vrf";
+    src = fetchFromGitHub {
+      owner = "input-output-hk";
+      repo = "libsodium";
+      # branch tdammers/rebased-vrf
+      rev = "66f017f16633f2060db25e17c170c2afa0f2a8a1";
+      sha256 = "12g2wz3gyi69d87nipzqnq4xc6nky3xbmi2i2pb2hflddq8ck72f";
+    };
+    nativeBuildInputs = [ autoreconfHook ];
+    configureFlags = "--enable-static";
+  });
 
   buildInputs = tools ++ libs;
 

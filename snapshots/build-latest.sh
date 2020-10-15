@@ -17,9 +17,6 @@ echo "+++ Building $latest"
 rm -rf stack.yaml.lock
 cat << EOF > stack.yaml
 resolver: $latest
-flags:
-  cardano-crypto-praos:
-    external-libsodium-vrf: false
 nix:
   shell-file: ../shell.nix
 EOF
