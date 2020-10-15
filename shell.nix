@@ -13,6 +13,7 @@ mkShell rec {
   tools = [
     ghc
     cabal-install
+    nix
     pkgconfig
   ] ++ lib.optional (!stdenv.isDarwin) git;
 
@@ -40,4 +41,9 @@ mkShell rec {
   # Force a UTF-8 locale because many Haskell programs and tests
   # assume this.
   LANG = "en_US.UTF-8";
+
+  # Make the shell suitable for the stack nix integration
+  # <nixpkgs/pkgs/development/haskell-modules/generic-stack-builder.nix>
+  GIT_SSL_CAINFO = "${cacert}/etc/ssl/certs/ca-bundle.crt";
+  STACK_IN_NIX_SHELL = "true";
 }
