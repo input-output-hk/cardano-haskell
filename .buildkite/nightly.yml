@@ -1,6 +1,8 @@
 env:
   NIX_PATH: "nixpkgs=https://nixos.org/channels/nixos-20.09/nixexprs.tar.xz"
   compiler: "ghc865"
+  CABAL_CACHE_ARCHIVE: "/cache/cardano-haskell"
+  CABAL_STORE_DIR: "/build/cardano-haskell.store"
 
 steps:
   - label: 'Build master branch of everything'
