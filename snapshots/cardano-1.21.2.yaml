@@ -94,7 +94,7 @@ packages:
   - shelley/chain-and-ledger/shelley-spec-ledger-test
 
 - git: https://github.com/input-output-hk/cardano-node
-  commit: 9577e0a514454fd59faeba79a1bb6d670eddb96d
+  commit: 2a40a945a1bbbb872a13fb6c92bbe8888ed196cb
   subdirs:
   - cardano-api
   - cardano-cli
