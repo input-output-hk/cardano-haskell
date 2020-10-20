@@ -46,9 +46,11 @@ fi
 
 cd cardano-repo-tool
 cabal update
+echo "--- Configuring cardano-repo-tool"
+cabal "${cabal_args[@]}" configure --constraint="base16-bytestring<1.0.0.0"
 restore_cache
 echo "--- Building cardano-repo-tool"
-cabal "${cabal_args[@]}" install --constraint="base16-bytestring<1.0.0.0" --installdir=../bin --overwrite-policy=always
+cabal "${cabal_args[@]}" install --installdir=../bin --overwrite-policy=always
 cd ..
 
 ./bin/cardano-repo-tool --version
@@ -63,10 +65,13 @@ echo "+++ Updating repos"
 
 cabal update
 
-restore_cache
-
 ################################################################################
 # Build
 
+echo "--- Configuring cardano-haskell"
+cabal "${cabal_args[@]}" configure -O0
+
+restore_cache
+
 echo "+++ Building cardano-haskell"
-cabal "${cabal_args[@]}" build all -O0
+cabal "${cabal_args[@]}" build all
