@@ -15,8 +15,8 @@ packages:
   cardano-ledger-specs/shelley-ma/impl
   goblins/
 
-  cardano-prelude
-  cardano-prelude/test
+  cardano-prelude/cardano-prelude
+  cardano-prelude/cardano-prelude-test
 
   iohk-monitoring-framework/contra-tracer
   iohk-monitoring-framework/tracer-transformers
