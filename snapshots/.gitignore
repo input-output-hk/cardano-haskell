@@ -1,0 +1,6 @@
+test-snapshot-build.cabal
+CHANGELOG.md
+MyLib.hs
+Setup.hs
+.stack-work
+stack.yaml*
