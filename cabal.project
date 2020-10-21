@@ -12,19 +12,17 @@ packages:
   cardano-ledger-specs/shelley/chain-and-ledger/dependencies/non-integer
   cardano-ledger-specs/shelley/chain-and-ledger/executable-spec
   cardano-ledger-specs/shelley/chain-and-ledger/shelley-spec-ledger-test
+  cardano-ledger-specs/shelley-ma/impl
   goblins/
 
-  cardano-prelude
-  cardano-prelude/test
+  cardano-prelude/cardano-prelude
+  cardano-prelude/cardano-prelude-test
 
   iohk-monitoring-framework/contra-tracer
   iohk-monitoring-framework/tracer-transformers
   iohk-monitoring-framework/iohk-monitoring
   iohk-monitoring-framework/examples
   iohk-monitoring-framework/plugins/*/*.cabal
-
-  cardano-benchmarking/cardano-rt-view
-  cardano-benchmarking/cardano-tx-generator
 
   cardano-base/binary
   cardano-base/binary/test
@@ -48,12 +46,11 @@ packages:
   cardano-db-sync/cardano-db-sync
   cardano-db-sync/cardano-db-sync-extended
 
-index-state: 2020-07-14T22:50:55Z
+  cardano-wallet/lib/*/*.cabal
+  cardano-addresses/*/*.cabal
+  cardano-transactions
 
 tests: True
-
-max-backjumps: 5000
-reorder-goals: True
 
 package ouroboros-network
   flags: +cddl
@@ -85,14 +82,28 @@ package shelley-spec-ledger
 package shelley-spec-ledger-test
   flags: +development
 
+package cardano-shell
+  tests: False
+
+index-state: 2020-10-06T21:19:33Z
+
+max-backjumps: 5000
+reorder-goals: True
+
 -- Note that generally we should not need any constraints here, since
 -- individual .cabal files should specify any necessary constraints.
 constraints:
-  graphviz == 2999.20.0.3,
-  hedgehog >= 1.0.2
+    graphviz == 2999.20.0.3
+  , hedgehog >= 1.0.2
+  -- dependency of systemd-2.3.0
+  , network >= 3.1.1.1
+  -- choose versions that work with base >= 4.12
+  , hjsonpointer >= 1.5.0
+  , hjsonschema >= 1.10.0
 
-package cardano-shell
-  tests: False
+-- Relax overly strict bounds on aeson in these packages which are
+-- deps of cardano-addresses.
+allow-newer: hjsonschema:*, hjsonpointer:aeson
 
 source-repository-package
   type: git
@@ -111,3 +122,10 @@ source-repository-package
   location: https://github.com/input-output-hk/persistent
   tag: 107787ecc4c8a112375493cd66574f788f950fce
   subdir: persistent-template
+
+package persistent
+  tests: False
+package persistent-sqlite
+  tests: False
+package persistent-template
+  tests: False

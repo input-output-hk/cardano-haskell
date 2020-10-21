@@ -1,6 +1,7 @@
 cabal.project.local
 cabal.project.local~
 dist-newstyle/
+bin/cardano-repo-tool
 
 cardano-addresses/
 cardano-base/
