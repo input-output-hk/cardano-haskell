@@ -129,6 +129,7 @@ packages:
 - git: https://github.com/input-output-hk/ouroboros-network
   commit: f6466b6473df52a42316061e495f0defa2a71442
   subdirs:
+  - cardano-client
   - io-sim
   - io-sim-classes
   - network-mux
