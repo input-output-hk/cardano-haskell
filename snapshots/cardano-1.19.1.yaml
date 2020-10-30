@@ -132,6 +132,7 @@ packages:
   - ntp-client
   - ouroboros-network
   - ouroboros-consensus
+  - ouroboros-consensus-mock
   - ouroboros-consensus-byron
   - ouroboros-consensus-cardano
   - ouroboros-consensus-shelley

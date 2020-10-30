@@ -135,6 +135,7 @@ packages:
   - network-mux
   - ntp-client
   - ouroboros-consensus
+  - ouroboros-consensus-mock
   - ouroboros-consensus-byron
   - ouroboros-consensus-cardano
   - ouroboros-consensus-shelley
