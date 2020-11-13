@@ -43,14 +43,14 @@ packages:
   cardano-node/cardano-cli
   cardano-node/hedgehog-extras
 
-  cardano-db-sync/cardano-db
-  cardano-db-sync/cardano-db/test
-  cardano-db-sync/cardano-db-sync
-  cardano-db-sync/cardano-db-sync-extended
+--  cardano-db-sync/cardano-db
+--  cardano-db-sync/cardano-db/test
+--  cardano-db-sync/cardano-db-sync
+--  cardano-db-sync/cardano-db-sync-extended
 
-  cardano-wallet/lib/*/*.cabal
-  cardano-addresses/*/*.cabal
-  cardano-transactions
+--  cardano-wallet/lib/*/*.cabal
+--  cardano-addresses/*/*.cabal
+--  cardano-transactions
 
 tests: True
 
