@@ -35,7 +35,7 @@ packages:
 - libsystemd-journal-1.4.4
 - micro-recursion-schemes-5.0.2.2
 - moo-1.2
-- network-3.1.1.1
+- network-3.1.2.1
 - partial-order-0.2.0.0
 - primitive-0.7.1.0
 - prometheus-2.1.2
@@ -43,11 +43,12 @@ packages:
 - quickcheck-instances-0.3.19
 - QuickCheck-2.12.6.1
 - quiet-0.2
+- semialign-1.1.0.1
 - snap-core-1.0.4.1
 - snap-server-1.1.1.1
 - sop-core-0.5.0.1
 - statistics-linreg-0.3
-- streaming-binary-0.3.0.1
+- streaming-binary-0.2.2.0
 - streaming-bytestring-0.2.0
 - systemd-2.3.0
 - tasty-hedgehog-1.0.0.2
@@ -56,6 +57,7 @@ packages:
 - text-conversions-0.3.1
 - text-zipper-0.10.1
 - th-lift-instances-0.1.14
+- these-1.1.1.1
 - time-units-1.0.0
 - transformers-except-0.1.1
 - unordered-containers-0.2.12.0
