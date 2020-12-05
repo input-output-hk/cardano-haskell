@@ -39,6 +39,7 @@ packages:
 
   cardano-node/cardano-api
   cardano-node/cardano-node
+  cardano-node/cardano-node-chairman
   cardano-node/cardano-config
   cardano-node/cardano-cli
   cardano-node/hedgehog-extras
@@ -87,7 +88,7 @@ package shelley-spec-ledger-test
 package cardano-shell
   tests: False
 
-index-state: 2020-10-06T21:19:33Z
+index-state: 2020-11-15T00:00:00Z
 
 max-backjumps: 5000
 reorder-goals: True
