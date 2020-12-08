@@ -1,4 +1,4 @@
-name: cardano-1.24.1
+name: cardano-1.24.2
 
 resolver: lts-14.25
 
@@ -96,7 +96,7 @@ packages:
   - shelley-ma/impl
 
 - git: https://github.com/input-output-hk/cardano-node
-  commit: 196ba716c425a0b7c75741c168f6a6d7edaee1fc
+  commit: 400d18092ce604352cf36fe5f105b0d7c78be074
   subdirs:
   - cardano-api
   - cardano-api/test
