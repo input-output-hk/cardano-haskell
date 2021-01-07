@@ -1,3 +1,5 @@
+index-state: 2020-12-11T00:00:00Z
+
 packages:
   ouroboros-network/*/*.cabal
 
@@ -88,8 +90,6 @@ package shelley-spec-ledger-test
 
 package cardano-shell
   tests: False
-
-index-state: 2020-11-15T00:00:00Z
 
 max-backjumps: 5000
 reorder-goals: True
