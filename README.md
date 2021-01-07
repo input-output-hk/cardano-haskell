@@ -168,10 +168,10 @@ If so desired, you can freeze to a specific timestamp of the hackage index.
 
 Next, set up any appropriate local configuration, e.g.
 ```
-$ cabal configure --with-compiler ghc-8.6.5 -O0
+$ cabal configure --with-compiler ghc-8.10.3 -O0
 ```
-This selects GHC version 8.6.5, which is expected to be found on the `$PATH`
-literally as `ghc-8.6.5`. If you want to try a different GHC version or your GHC is installed not
+This selects GHC version 8.10.3, which is expected to be found on the `$PATH`
+literally as `ghc-8.10.3`. If you want to try a different GHC version or your GHC is installed not
 on the `$PATH` then simply pass the full path to the compiler binary.
 
 It also selects no optimisation, which is often the appropriate choice during
@@ -180,7 +180,7 @@ benchmarking this would not be the appropriate choice.
 
 If you want a profiled build, select that at this stage
 ```
-$ cabal configure --with-compiler ghc-8.6.5 -O --enable-profiling
+$ cabal configure --with-compiler ghc-8.10.3 -O --enable-profiling
 ```
 
 You can also manually set these local options by editing the
