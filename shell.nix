@@ -44,7 +44,7 @@ mkShell rec {
     zlib
   ]
   ++ lib.optional (stdenv.hostPlatform.libc == "glibc") glibcLocales
-  ++ lib.optional stdenv.isLinux systemd.dev
+  ++ lib.optional stdenv.isLinux systemd
   ++ lib.optionals stdenv.isDarwin (with darwin.apple_sdk.frameworks; [
     Cocoa CoreServices libcxx libiconv
   ]);
