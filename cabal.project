@@ -1,4 +1,4 @@
-index-state: 2020-12-11T00:00:00Z
+index-state: 2021-02-24T00:00:00Z
 
 packages:
   ouroboros-network/*/*.cabal
@@ -16,6 +16,13 @@ packages:
   cardano-ledger-specs/shelley/chain-and-ledger/shelley-spec-ledger-test
   cardano-ledger-specs/shelley-ma/impl
   cardano-ledger-specs/shelley-ma/shelley-ma-test
+  cardano-ledger-specs/alonzo/impl
+  cardano-ledger-specs/cardano-ledger-test
+
+  plutus/plutus-ledger-api
+  plutus/plutus-tx
+  plutus/plutus-core
+  plutus/prettyprinter-configurable
 
   goblins/
 
@@ -25,8 +32,8 @@ packages:
   iohk-monitoring-framework/contra-tracer
   iohk-monitoring-framework/tracer-transformers
   iohk-monitoring-framework/iohk-monitoring
-  iohk-monitoring-framework/examples
-  iohk-monitoring-framework/plugins/*/*.cabal
+--  iohk-monitoring-framework/examples
+  iohk-monitoring-framework/plugins/backend-{aggregation,ekg,monitoring,trace-forwarder}
 
   cardano-base/binary
   cardano-base/binary/test
@@ -45,6 +52,7 @@ packages:
   cardano-node/cardano-node-chairman
   cardano-node/cardano-config
   cardano-node/cardano-cli
+  cardano-node/cardano-client-demo
   cardano-node/hedgehog-extras
 
 --  cardano-db-sync/cardano-db
@@ -59,7 +67,7 @@ packages:
 tests: True
 
 package ouroboros-network
-  flags: +cddl
+  flags: +cddl +asserts
 
 package cardano-binary
   flags: +development
@@ -91,8 +99,10 @@ package shelley-spec-ledger-test
 package cardano-shell
   tests: False
 
+package plutus-core
+  tests: False
+
 max-backjumps: 5000
-reorder-goals: True
 
 -- Note that generally we should not need any constraints here, since
 -- individual .cabal files should specify any necessary constraints.
@@ -107,6 +117,10 @@ constraints:
 -- Relax overly strict bounds on aeson in these packages which are
 -- deps of cardano-addresses.
 allow-newer: hjsonschema:*, hjsonpointer:aeson
+
+allow-newer: size-based:template-haskell
+
+allow-newer: monoidal-containers:aeson
 
 -- The r0 revision of this quickcheck-state-machine-0.7 on Hackage adds a lower
 -- bound on the text package: >=1.2.4.0. However, 1.2.4.0 doesn't support GHC
