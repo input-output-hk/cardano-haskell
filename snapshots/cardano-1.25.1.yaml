@@ -146,11 +146,13 @@ packages:
   - ouroboros-network-framework
   - typed-protocols
   - typed-protocols-examples
-  - Win32-network
   # Extra packages not used by cardano-node
   - cardano-client
   - ntp-client
   - ouroboros-consensus-mock
+
+- git: https://github.com/input-output-hk/Win32-network
+  commit: f71be820aaa480256bba24fc3f2a1e12cd1eab0f
 
 - git: https://github.com/snoyberg/http-client.git
   commit: 1a75bdfca014723dd5d40760fad854b3f0f37156
