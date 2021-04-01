@@ -28,6 +28,7 @@ packages:
 - regex-posix-clib-2.7
 - statistics-linreg-0.3
 - streaming-binary-0.2.2.0
+- ip-1.5.1
 
 - git: https://github.com/input-output-hk/cardano-base
   commit: b364d925e0a72689ecba40dd1f4899f76170b894
@@ -76,7 +77,7 @@ packages:
   - cardano-prelude-test
 
 - git: https://github.com/input-output-hk/cardano-sl-x509
-  commit: 43a036c5bbe68ca2e9cbe611eab7982e2348fe49
+  commit: 12925934c533b3a6e009b61ede555f8f26bac037
 
 - git: https://github.com/input-output-hk/goblins
   commit: cde90a2b27f79187ca8310b6549331e59595e7ba
