@@ -1,22 +1,32 @@
 { pkgs ? import <nixpkgs> {}
-, compiler ? "ghc865"
-# Import Haskell.nix master as of 2020-10-13, just for building cabal-cache.
+, compiler ? "ghc8104"
+# Import Haskell.nix master as of 2021-04-01,
+# for building cardano-repo-tool and cabal-cache.
 , haskellNix ? import (builtins.fetchTarball {
-    url = "https://github.com/input-output-hk/haskell.nix/archive/ab2f5a9b6d8cb1b18810194d9f4a6208710c358c.tar.gz";
-    sha256 = "1j3zwrrmnigl44lqdiyywwhj5m0wb4v6bpl89v1wp31vxwyyf7rv";
+    url = "https://github.com/input-output-hk/haskell.nix/archive/e7961eee7bbaaa195b3255258f40d5536574eb74.tar.gz";
+    sha256 = "0ils54jldagmgn3c1s7994s9gwv5mz5l9lpsn7c9islhhmx2wlzb";
   }) {}
 }:
 
 with pkgs;
 
 let
-  cabal-cache = (haskellNix.pkgs.haskell-nix.hackage-package {
-    name = "cabal-cache";
-    version = "1.0.2.1";
+  inherit ((haskellNix.pkgs.haskell-nix.project {
+    src =
+      assert (pkgs.lib.assertMsg (builtins.pathExists ./cardano-repo-tool/cabal.project) "Missing git submodule - run git submodule update --init");
+      ./cardano-repo-tool;
+    projectFileName = "cabal.project";
     compiler-nix-name = compiler;
-    index-state = "2020-10-06T21:19:33Z";
-    plan-sha256 = "02dw6bk4p6vydzs9js6nd7v9bjpv3pwf5ga77q1c9pr1v8ylbjsj";
-  }).components.exes.cabal-cache;
+    sha256map."https://github.com/input-output-hk/nix-archive"."7dcf21b2af54d0ab267f127b6bd8fa0b31cfa49d" = "0mhw896nfqbd2iwibzymydjlb3yivi9gm0v2g1nrjfdll4f7d8ly";
+  }).hsPkgs.cardano-repo-tool.components.exes) cardano-repo-tool;
+
+  inherit ((haskellNix.pkgs.haskell-nix.hackage-package {
+    name = "cabal-cache";
+    version = "1.0.3.0";
+    compiler-nix-name = compiler;
+    index-state = "2021-04-01T00:00:00Z";
+    # plan-sha256 = "02dw6bk4p6vydzs9js6nd7v9bjpv3pwf5ga77q1c9pr1v8ylbjsj";
+  }).components.exes) cabal-cache;
 
 in
 mkShell rec {
@@ -30,6 +40,7 @@ mkShell rec {
     cabal-install
     nix
     pkgconfig
+    cardano-repo-tool
     cabal-cache
   ] ++ lib.optional (!stdenv.isDarwin) git;
 
