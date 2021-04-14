@@ -1,0 +1,119 @@
+name: cardano-1.26.1
+
+resolver: lts-17.6
+
+packages:
+# Packages that exist in LTS, but which we use a different version of,
+# or just want to explicitly pin.
+- base16-bytestring-1.0.1.0 # 0.1.1.7 on LTS 17.6; would break cardano-base
+- bech32-1.1.0
+- bech32-th-1.0.2
+- Cabal-3.4.0.0
+- parsec-3.1.14.0
+
+# Packages not in LTS
+- Unique-0.4.7.6
+- Win32-2.6.2.0
+- canonical-json-0.6.0.0
+- gray-code-0.3.1
+- ip-1.5.1
+- libsystemd-journal-1.4.4
+- micro-recursion-schemes-5.0.2.2
+- moo-1.2
+- nothunks-0.1.2
+- partial-order-0.2.0.0
+- regex-posix-clib-2.7
+- statistics-linreg-0.3
+- streaming-binary-0.2.2.0
+- transformers-except-0.1.1
+
+- git: https://github.com/input-output-hk/cardano-base
+  commit: 101e7752cf4b23fd0b411736f523b8f6c43f6bc2
+  subdirs:
+  - binary
+  - binary/test
+  - cardano-crypto-class
+  - cardano-crypto-tests
+  - cardano-crypto-praos
+  - slotting
+
+- git: https://github.com/input-output-hk/cardano-crypto
+  commit: f73079303f663e028288f9f4a9e08bcca39a923e
+
+- git: https://github.com/input-output-hk/cardano-ledger-specs
+  commit: 0730828363ad6d0669b7a5a12635e22944b32880
+  subdirs:
+  - byron/chain/executable-spec
+  - byron/crypto
+  - byron/crypto/test
+  - byron/ledger/executable-spec
+  - byron/ledger/impl
+  - byron/ledger/impl/test
+  - semantics/executable-spec
+  - semantics/small-steps-test
+  - shelley/chain-and-ledger/dependencies/non-integer
+  - shelley/chain-and-ledger/executable-spec
+  - shelley/chain-and-ledger/shelley-spec-ledger-test
+  - shelley-ma/impl
+
+- git: https://github.com/input-output-hk/cardano-node
+  commit: 62f38470098fc65e7de5a4b91e21e36ac30799f3
+  subdirs:
+  - cardano-api
+  - cardano-api/test
+  - cardano-cli
+  - cardano-config
+  - cardano-node
+  - cardano-node-chairman
+  - hedgehog-extras
+
+- git: https://github.com/input-output-hk/cardano-prelude
+  commit: ee4e7b547a991876e6b05ba542f4e62909f4a571
+  subdirs:
+  - cardano-prelude
+  - cardano-prelude-test
+
+- git: https://github.com/input-output-hk/cardano-sl-x509
+  commit: 12925934c533b3a6e009b61ede555f8f26bac037
+
+- git: https://github.com/input-output-hk/goblins
+  commit: cde90a2b27f79187ca8310b6549331e59595e7ba
+
+- git: https://github.com/input-output-hk/iohk-monitoring-framework
+  commit: f6ab0631275d04dff1b990283bbf9671093e7505
+  subdirs:
+  - contra-tracer
+  - iohk-monitoring
+  - plugins/backend-aggregation
+  - plugins/backend-ekg
+  - plugins/backend-monitoring
+  - plugins/backend-trace-forwarder
+  - plugins/scribe-systemd
+  - tracer-transformers
+
+- git: https://github.com/input-output-hk/ouroboros-network
+  commit: 7f90c8c59ffc7d61a4e161e886d8962a9c26787a
+  subdirs:
+  - io-sim
+  - io-sim-classes
+  - network-mux
+  - ouroboros-consensus
+  - ouroboros-consensus-byron
+  - ouroboros-consensus-cardano
+  - ouroboros-consensus-shelley
+  - ouroboros-network
+  - ouroboros-network-framework
+  - typed-protocols
+  - typed-protocols-examples
+  # Extra packages not used by cardano-node
+  - cardano-client
+  - ntp-client
+  - ouroboros-consensus-mock
+
+- git: https://github.com/input-output-hk/Win32-network
+  commit: 94153b676617f8f33abe8d8182c37377d2784bd1
+
+- git: https://github.com/snoyberg/http-client.git
+  commit: 1a75bdfca014723dd5d40760fad854b3f0f37156
+  subdirs:
+  - http-client
