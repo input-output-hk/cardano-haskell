@@ -1,6 +1,6 @@
 name: cardano-1.26.1
 
-resolver: lts-17.6
+resolver: lts-17.9
 
 packages:
 # Packages that exist in LTS, but which we use a different version of,
