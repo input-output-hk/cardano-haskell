@@ -10,6 +10,7 @@ packages:
 - bech32-th-1.0.2
 - Cabal-3.4.0.0
 - parsec-3.1.14.0
+- async-timer-0.2.0.0
 
 # Packages not in LTS
 - Unique-0.4.7.6
