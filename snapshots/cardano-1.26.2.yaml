@@ -42,7 +42,7 @@ packages:
   commit: f73079303f663e028288f9f4a9e08bcca39a923e
 
 - git: https://github.com/input-output-hk/cardano-ledger-specs
-  commit: 0730828363ad6d0669b7a5a12635e22944b32880
+  commit: 2e0e7b625492e5e0182464247f4c26d6949ab6f7
   subdirs:
   - byron/chain/executable-spec
   - byron/crypto
@@ -58,7 +58,7 @@ packages:
   - shelley-ma/impl
 
 - git: https://github.com/input-output-hk/cardano-node
-  commit: 62f38470098fc65e7de5a4b91e21e36ac30799f3
+  commit: 3531289c9f79eab7ac5d3272ce6e6821504fec4c
   subdirs:
   - cardano-api
   - cardano-api/test
