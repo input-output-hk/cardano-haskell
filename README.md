@@ -4,10 +4,10 @@ Workflow for building the Cardano (Haskell) node and related components
 The purpose of this repository is to provide a convenient workflow *for
 developers working on Cardano* to (re)build any or all of the components.
 
-This developer workflow is **not intended to provide reprodcible builds** nor
+This developer workflow is **not intended to provide reproducible builds** nor
 to replace the scheme used for CI. If you want to build the latest released
 version of `cardano-node`, then this is not the repository you are looking for.
-For that, just build from within that repository, which contain reproducible
+For that, just build from within that repository, which contains reproducible
 snapshots of all dependencies.
 
 The intention of this repository is for developers working on Cardano to gain
@@ -103,7 +103,7 @@ You can see the status of all the repositories using the command
 $ cardano-repo-tool repo-status
 ```
 
-There are also commands to update indivdual or all repos (and rebase if there
+There are also commands to update individual or all repos (and rebase if there
 are local patches)
 ```
 $ cardano-repo-tool update-repos
@@ -124,7 +124,7 @@ feature branch for one or more repositories. Use
 Repository combinations
 -----------------------
 
-The combination of the lastest version of master of all repositories is not
+The combination of the latest version of master of all repositories is not
 guaranteed to build at all times.
 
 Depending on what you are doing you will want to select some appropriate
@@ -153,10 +153,10 @@ Configuring the build
 Once you have the appropriate combination of repository commits for your task
 then you can build any or all components from the top level.
 
-You must build the components from the top level directroy, since each
+You must build the components from the top level directory, since each
 repository also has its own local `cabal.project` file.
 
-The recommened workflow is to use multiple terminals (windows or tabs), one
+The recommended workflow is to use multiple terminals (windows or tabs), one
 at the top level directory for building (or `cabal repl` or `cabal test`) and
 others in the appropriate sub-directories for editing and git operations.
 
@@ -204,10 +204,10 @@ careful about caching. For the first build try:
 $ cabal build all -j4 --keep-going
 $ cabal build all --dry-run
 ```
-The `-j4` says build using 4 cores. Adjust as approprite for your system. The
+The `-j4` says build using 4 cores. Adjust as appropriate for your system. The
 `--keep-going` tells cabal to keep building other components if possible,
 rather than stopping as soon as any single package fails to build. The second
-command will report any remaining packges that failed to build (or depended
+command will report any remaining packages that failed to build (or depended
 on packages that failed).
 
 
