@@ -2,6 +2,7 @@ index-state: 2021-02-24T00:00:00Z
 
 packages:
   ouroboros-network/*/*.cabal
+  Win32-network
 
   cardano-ledger-specs/semantics/executable-spec
   cardano-ledger-specs/semantics/small-steps-test
@@ -11,12 +12,14 @@ packages:
   cardano-ledger-specs/byron/chain/executable-spec
   cardano-ledger-specs/byron/crypto
   cardano-ledger-specs/byron/crypto/test
+  cardano-ledger-specs/cardano-ledger-core
   cardano-ledger-specs/shelley/chain-and-ledger/dependencies/non-integer
   cardano-ledger-specs/shelley/chain-and-ledger/executable-spec
   cardano-ledger-specs/shelley/chain-and-ledger/shelley-spec-ledger-test
   cardano-ledger-specs/shelley-ma/impl
   cardano-ledger-specs/shelley-ma/shelley-ma-test
   cardano-ledger-specs/alonzo/impl
+  cardano-ledger-specs/alonzo/test
   cardano-ledger-specs/cardano-ledger-test
 
   plutus/plutus-ledger-api
@@ -41,6 +44,8 @@ packages:
   cardano-base/cardano-crypto-praos
   cardano-base/cardano-crypto-tests
   cardano-base/slotting
+  cardano-base/strict-containers
+  hedgehog-extras
 
   cardano-crypto
 
@@ -53,7 +58,7 @@ packages:
   cardano-node/cardano-config
   cardano-node/cardano-cli
   cardano-node/cardano-client-demo
-  cardano-node/hedgehog-extras
+--cardano-node/cardano-submit-api
 
 --  cardano-db-sync/cardano-db
 --  cardano-db-sync/cardano-db/test
@@ -95,6 +100,9 @@ package shelley-spec-ledger
 
 package shelley-spec-ledger-test
   flags: +development
+
+package cardano-ledger-alonzo-test
+  tests: False
 
 package cardano-shell
   tests: False
