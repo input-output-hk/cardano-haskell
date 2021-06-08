@@ -18,7 +18,7 @@ rm -rf stack.yaml.lock
 cat << EOF > stack.yaml
 resolver: $latest
 nix:
-  shell-file: ../shell.nix
+  shell-file: shell.nix
 EOF
 cabal init --minimal --lib --non-interactive --dependency cardano-node --overwrite --package-name test-snapshot-build
 

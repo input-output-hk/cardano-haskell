@@ -1,10 +1,11 @@
 { pkgs ? import <nixpkgs> {}
-, compiler ? "ghc8104"
-# Import Haskell.nix master as of 2021-04-01,
+, ghcVersion ? "ghc8104"
+, withRepoTools ? true
+# Import Haskell.nix master as of 2021-06-01,
 # for building cardano-repo-tool and cabal-cache.
 , haskellNix ? import (builtins.fetchTarball {
-    url = "https://github.com/input-output-hk/haskell.nix/archive/e7961eee7bbaaa195b3255258f40d5536574eb74.tar.gz";
-    sha256 = "0ils54jldagmgn3c1s7994s9gwv5mz5l9lpsn7c9islhhmx2wlzb";
+    url = "https://github.com/input-output-hk/haskell.nix/archive/f752903e10731e65bf9b134896dacd572ed0784f.tar.gz";
+    sha256 = "1kkpkjdyd1yv8z1qlzr3jrzyk9lxac5m4f9py8igyars2nwnhhzr";
   }) {}
 }:
 
@@ -16,14 +17,14 @@ let
       assert (pkgs.lib.assertMsg (builtins.pathExists ./cardano-repo-tool/cabal.project) "Missing git submodule - run git submodule update --init");
       ./cardano-repo-tool;
     projectFileName = "cabal.project";
-    compiler-nix-name = compiler;
+    compiler-nix-name = ghcVersion;
     sha256map."https://github.com/input-output-hk/nix-archive"."7dcf21b2af54d0ab267f127b6bd8fa0b31cfa49d" = "0mhw896nfqbd2iwibzymydjlb3yivi9gm0v2g1nrjfdll4f7d8ly";
   }).hsPkgs.cardano-repo-tool.components.exes) cardano-repo-tool;
 
   inherit ((haskellNix.pkgs.haskell-nix.hackage-package {
     name = "cabal-cache";
     version = "1.0.3.0";
-    compiler-nix-name = compiler;
+    compiler-nix-name = ghcVersion;
     index-state = "2021-04-01T00:00:00Z";
     # plan-sha256 = "02dw6bk4p6vydzs9js6nd7v9bjpv3pwf5ga77q1c9pr1v8ylbjsj";
   }).components.exes) cabal-cache;
@@ -33,13 +34,15 @@ mkShell rec {
   name = "cardano-haskell-env";
   meta.platforms = lib.platforms.unix;
 
-  ghc = haskell.compiler.${compiler};
+  ghc = haskell.compiler.${ghcVersion};
 
   tools = [
     ghc
     cabal-install
+    stack
     nix
     pkgconfig
+  ] ++ lib.optionals withRepoTools [
     cardano-repo-tool
     cabal-cache
   ] ++ lib.optional (!stdenv.isDarwin) git;
@@ -86,4 +89,7 @@ mkShell rec {
   # <nixpkgs/pkgs/development/haskell-modules/generic-stack-builder.nix>
   GIT_SSL_CAINFO = "${cacert}/etc/ssl/certs/ca-bundle.crt";
   STACK_IN_NIX_SHELL = "true";
+
+  # Provide access to individual attributes
+  passthru = { inherit pkgs cardano-repo-tool cabal-cache; };
 }
