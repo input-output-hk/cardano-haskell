@@ -1,4 +1,4 @@
-index-state: 2021-02-24T00:00:00Z
+index-state: 2021-04-30T00:00:00Z
 
 packages:
   ouroboros-network/*/*.cabal
@@ -26,6 +26,7 @@ packages:
   plutus/plutus-tx
   plutus/plutus-core
   plutus/prettyprinter-configurable
+  plutus/word-array
 
   goblins/
 
@@ -52,13 +53,13 @@ packages:
   cardano-shell/cardano-shell
 
   cardano-node/cardano-api
-  cardano-node/cardano-api/test
   cardano-node/cardano-node
   cardano-node/cardano-node-chairman
   cardano-node/cardano-config
   cardano-node/cardano-cli
   cardano-node/cardano-client-demo
---cardano-node/cardano-submit-api
+  cardano-node/cardano-testnet
+--  cardano-node/cardano-submit-api
 
 --  cardano-db-sync/cardano-db
 --  cardano-db-sync/cardano-db/test
@@ -91,6 +92,7 @@ package cardano-crypto-praos
 
 package cardano-crypto-tests
   flags: +development
+  benchmarks: True
 
 package small-steps-test
   flags: +development
@@ -110,7 +112,7 @@ package cardano-shell
 package plutus-core
   tests: False
 
-max-backjumps: 5000
+max-backjumps: 10000
 
 -- Note that generally we should not need any constraints here, since
 -- individual .cabal files should specify any necessary constraints.
@@ -137,3 +139,10 @@ allow-newer: monoidal-containers:aeson
 -- an "older" version of text. See
 -- https://github.com/advancedtelematic/quickcheck-state-machine/issues/371
 allow-older: quickcheck-state-machine:text
+
+-- Drops an instance breaking our code. Should be released to Hackage eventually.
+source-repository-package
+  type: git
+  location: https://github.com/Quid2/flat.git
+  tag: 95e5d7488451e43062ca84d5376b3adcc465f1cd
+
