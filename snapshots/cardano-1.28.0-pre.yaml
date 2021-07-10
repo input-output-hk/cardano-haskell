@@ -1,13 +1,13 @@
-name: cardano-1.28.0
+name: cardano-1.28.0-pre
 
-resolver: lts-17.9
+resolver: lts-17.15
 
 packages:
 # Packages that exist in LTS, but which we use a different version of,
 # or just want to explicitly pin.
 - base16-bytestring-1.0.1.0 # 0.1.1.7 on LTS 17.6; would break cardano-base
-- bech32-1.1.0
-- bech32-th-1.0.2
+- bech32-1.1.1
+- bech32-th-1.1.1
 - Cabal-3.4.0.0
 - parsec-3.1.14.0
 - async-timer-0.2.0.0
@@ -80,7 +80,7 @@ packages:
   - shelley-ma/shelley-ma-test
 
 - git: https://github.com/input-output-hk/cardano-node
-  commit: 00125da81e187ce382c6ac8faa48cef480a8914b
+  commit: bc225ae3085ba6f4f4007c50c4877bc4cebcd7de
   subdirs:
   - cardano-api
   - cardano-cli
