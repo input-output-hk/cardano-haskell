@@ -1,20 +1,23 @@
 name: cardano-1.28.0
 
-resolver: lts-17.15
+resolver: lts-18.4
 
 packages:
-# In LTS 17.15, but with a different version
-- base16-bytestring-1.0.1.0 # 0.1.1.7 on lts-17.15
-- binary-0.8.8.0 # Some on lts, but somehow stack requires it?
-- Cabal-3.4.0.0 # 3.2.1.0 on lts-17.15
-- containers-0.5.11.0 # 0.6.2.1 on lts-17.15
-- dns-3.0.4 # 4.0.1 on lts-17.15
-- network-3.1.2.1 # 3.1.1.1 on lts-17.15
-- parsec-3.1.14.0 # Same on lts, but somehow stack requires it?
-- recursion-schemes-5.1.3 # 5.2.2 on lts-17.15
-- text-1.2.4.0 # 1.2.4.1 on lts-17.15
+# In LTS 18.4, but with a different version
+- base16-bytestring-1.0.1.0 # 1.0.1.0 on lts-18.4
+- Cabal-3.4.0.0 # 3.2.1.0 on lts-18.4
+- containers-0.5.11.0 # 0.6.2.1 on lts-18.4
+- dns-3.0.4 # 4.0.1 on lts-18.4
+- network-3.1.2.1 # 3.1.1.1 on lts-18.4
+- recursion-schemes-5.1.3 # 5.2.2.1 on lts-18.4
+- text-1.2.4.0 # 1.2.4.1 on lts-18.4
+- Win32-2.6.2.0 # 2.6.1.0 on lts-18.4
 
-# Not in LTS 17.15
+# Same as on lts-18.4, but somehow stack requires it here
+- binary-0.8.8.0
+- parsec-3.1.14.0
+
+# Not in LTS 18.4
 - async-timer-0.2.0.0
 - beam-core-0.9.1.0
 - beam-migrate-0.5.1.0
@@ -22,11 +25,7 @@ packages:
 - canonical-json-0.6.0.0
 - composition-prelude-3.0.0.2
 - constraints-extras-0.3.1.0
-- dependent-map-0.4.0.0
-- dependent-sum-0.7.1.0
-- dependent-sum-template-0.1.0.3
 - gray-code-0.3.1
-- indexed-traversable-instances-0.1
 - lazy-search-0.1.2.1
 - lazysmallcheck-0.6
 - libsystemd-journal-1.4.4
@@ -43,14 +42,11 @@ packages:
 - servant-websockets-2.0.0
 - size-based-0.1.2.0
 - statistics-linreg-0.3
-- Stream-0.4.7.2
 - streaming-binary-0.2.2.0
 - time-interval-0.1.1
 - time-out-0.2
 - transformers-except-0.1.1
 - Unique-0.4.7.6
-- Win32-2.6.2.0
-- witherable-0.4.1
 
 - git: https://github.com/input-output-hk/cardano-base
   commit: b6a215c42a28dc8b71b42946fe30256a333d34af
