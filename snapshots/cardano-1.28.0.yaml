@@ -85,16 +85,19 @@ packages:
 - git: https://github.com/input-output-hk/cardano-node
   commit: 48429531f0d3d71fadce9a5971bf56a6df396f2d
   subdirs:
-    - cardano-api
-    - cardano-cli
-    - cardano-config
-    - cardano-node
+  - cardano-api
+  - cardano-cli
+  - cardano-config
+  - cardano-node
 
 - git: https://github.com/input-output-hk/cardano-prelude
   commit: fd773f7a58412131512b9f694ab95653ac430852
   subdirs:
   - cardano-prelude
   - cardano-prelude-test
+
+- git: https://github.com/input-output-hk/cardano-sl-x509
+  commit: 12925934c533b3a6e009b61ede555f8f26bac037
 
 - git: https://github.com/Quid2/flat.git
   commit: 95e5d7488451e43062ca84d5376b3adcc465f1cd
@@ -128,24 +131,28 @@ packages:
 - git: https://github.com/input-output-hk/ouroboros-network
   commit: e338f2cf8e1078fbda9555dd2b169c6737ef6774
   subdirs:
-    - io-classes
-    - io-sim
-    - monoidal-synchronisation
-    - network-mux
-    - ouroboros-consensus
-    - ouroboros-consensus-test
-    - ouroboros-consensus-byron
-    - ouroboros-consensus-byronspec
-    - ouroboros-consensus-byron-test
-    - ouroboros-consensus-shelley
-    - ouroboros-consensus-shelley-test
-    - ouroboros-consensus-cardano
-    - ouroboros-consensus-cardano-test
-    - ouroboros-network
-    - ouroboros-network-framework
-    - ouroboros-network-testing
-    - typed-protocols
-    - typed-protocols-examples
+  - io-classes
+  - io-sim
+  - monoidal-synchronisation
+  - network-mux
+  - ouroboros-consensus
+  - ouroboros-consensus-test
+  - ouroboros-consensus-byron
+  - ouroboros-consensus-byronspec
+  - ouroboros-consensus-byron-test
+  - ouroboros-consensus-shelley
+  - ouroboros-consensus-shelley-test
+  - ouroboros-consensus-cardano
+  - ouroboros-consensus-cardano-test
+  - ouroboros-network
+  - ouroboros-network-framework
+  - ouroboros-network-testing
+  - typed-protocols
+  - typed-protocols-examples
+  # Extra packages not used by cardano-node but used by cardano-wallet
+  - cardano-client
+  - ntp-client
+  - ouroboros-consensus-mock
 
 - git: https://github.com/input-output-hk/plutus
   commit: 523f349f3d68db07c98150734793ed7003d1f562
