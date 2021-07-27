@@ -25,6 +25,7 @@ packages:
 - canonical-json-0.6.0.0
 - composition-prelude-3.0.0.2
 - constraints-extras-0.3.1.0
+- ip-1.5.1
 - gray-code-0.3.1
 - lazy-search-0.1.2.1
 - lazysmallcheck-0.6
