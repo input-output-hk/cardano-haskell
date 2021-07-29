@@ -1,13 +1,7 @@
-env:
-  NIX_PATH: "nixpkgs=https://nixos.org/channels/nixos-20.09/nixexprs.tar.xz"
-
 steps:
   - label: 'Build latest stack snapshot'
     if: 'build.pull_request.id != null'
     command:
-      - "echo --- Setup"
-      - "git fetch origin master"
-      - "( git diff origin/$BUILDKITE_PULL_REQUEST_BASE_BRANCH..HEAD --name-only | grep '^snapshots/' > /dev/null ) || ( echo 'Stack snapshots unchanged, so skipping the build.'; exit 0 )"
-      - "cd snapshots && nix-shell -p stack cabal-install haskell.compiler.ghc865 --run ./build-latest.sh"
+      - "./.buildkite/latest-stack-snapshot.sh $BUILDKITE_PULL_REQUEST_BASE_BRANCH"
     agents:
       system: x86_64-linux

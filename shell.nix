@@ -6,6 +6,7 @@
     url = "https://github.com/input-output-hk/haskell.nix/archive/e7961eee7bbaaa195b3255258f40d5536574eb74.tar.gz";
     sha256 = "0ils54jldagmgn3c1s7994s9gwv5mz5l9lpsn7c9islhhmx2wlzb";
   }) {}
+, withRepoTools ? true
 }:
 
 with pkgs;
@@ -38,8 +39,10 @@ mkShell rec {
   tools = [
     ghc
     cabal-install
+    stack
     nix
     pkgconfig
+  ] ++ lib.optionals withRepoTools [
     cardano-repo-tool
     cabal-cache
   ] ++ lib.optional (!stdenv.isDarwin) git;
@@ -86,4 +89,6 @@ mkShell rec {
   # <nixpkgs/pkgs/development/haskell-modules/generic-stack-builder.nix>
   GIT_SSL_CAINFO = "${cacert}/etc/ssl/certs/ca-bundle.crt";
   STACK_IN_NIX_SHELL = "true";
+
+  passthru = { inherit pkgs; };
 }
