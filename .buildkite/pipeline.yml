@@ -1,3 +1,6 @@
+env:
+  NIX_PATH: "nixpkgs=https://nixos.org/channels/nixos-20.09/nixexprs.tar.xz"
+
 steps:
   - label: 'Build latest stack snapshot'
     if: 'build.pull_request.id != null'
