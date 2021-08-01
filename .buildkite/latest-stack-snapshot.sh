@@ -27,5 +27,5 @@ compiler=$(nix-instantiate --read-write-mode --eval --json --expr '(import ./she
 
 echo '^^^ ---'
 for resolver in "${latest[@]}"; do
-    nix-shell --run "./build-snapshot.sh $(basename -s .yaml $resolver) $compiler"
+    nix-shell --run "./build-snapshot.sh $(basename $resolver) $compiler"
 done
