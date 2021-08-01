@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-echo "--- Setup"
+echo "+++ Setup"
 
 mapfile -t latest < <( if [ -n "${1:-}" ]; then
     base_branch="$1"
@@ -18,14 +18,14 @@ if [ ${#latest[@]} -eq 0 ]; then
 fi
 
 echo "Going to build: ${latest[@]}"
+echo
 
 cd $(dirname $0)/../snapshots
 
-echo "+++ Building nix-shell"
+echo "--- Building nix-shell"
 export NIX_PATH=$(nix-instantiate --read-write-mode --eval --json --expr '"nixpkgs=${(import ./shell.nix).pkgs.path}"' | tr -d '"')
 compiler=$(nix-instantiate --read-write-mode --eval --json --expr '(import ./shell.nix).ghc.name' | tr -d '"')
 
-echo '^^^ ---'
 for resolver in "${latest[@]}"; do
     nix-shell --run "./build-snapshot.sh $(basename $resolver) $compiler"
 done
