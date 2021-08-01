@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> {}
+{ pkgs ? import (builtins.fetchTarball "https://nixos.org/channels/nixos-20.09/nixexprs.tar.xz") {}
 , compiler ? "ghc8104"
 # Import Haskell.nix master as of 2021-04-01,
 # for building cardano-repo-tool and cabal-cache.
@@ -7,6 +7,8 @@
     sha256 = "0ils54jldagmgn3c1s7994s9gwv5mz5l9lpsn7c9islhhmx2wlzb";
   }) {}
 , withRepoTools ? true
+# Also import 21.05 branch to get a stack/nix-shell bugfix
+, pkgs-2105 ? import (builtins.fetchTarball "https://nixos.org/channels/nixos-21.05/nixexprs.tar.xz") {}
 }:
 
 with pkgs;
@@ -39,7 +41,7 @@ mkShell rec {
   tools = [
     ghc
     cabal-install
-    stack
+    pkgs-2105.stack
     nix
     pkgconfig
   ] ++ lib.optionals withRepoTools [
