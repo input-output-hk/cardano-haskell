@@ -55,7 +55,7 @@ packages:
 
 # Using a fork until our patches can be merged upstream
 - git: https://github.com/input-output-hk/optparse-applicative
-  commit: 3876479d01d681ee529d1b26784335cbe0baf7cd
+  commit: 84bcc6f18992a441886589a117249bfface8630e
 
 - git: https://github.com/input-output-hk/cardano-base
   commit: 8c732560b201b5da8e3bdf175c6eda73a32d64bc
