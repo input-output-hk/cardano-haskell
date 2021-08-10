@@ -1,6 +1,6 @@
 name: cardano-alonzo-purple-1.0.1-pre1
 
-resolver: lts-18.4
+resolver: lts-18.5
 
 packages:
 # In LTS 18.4, but with a different version
