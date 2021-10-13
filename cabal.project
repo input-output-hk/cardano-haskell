@@ -4,23 +4,26 @@ packages:
   ouroboros-network/*/*.cabal
   Win32-network
 
-  cardano-ledger-specs/semantics/executable-spec
-  cardano-ledger-specs/semantics/small-steps-test
-  cardano-ledger-specs/byron/ledger/executable-spec
-  cardano-ledger-specs/byron/ledger/impl
-  cardano-ledger-specs/byron/ledger/impl/test
-  cardano-ledger-specs/byron/chain/executable-spec
-  cardano-ledger-specs/byron/crypto
-  cardano-ledger-specs/byron/crypto/test
-  cardano-ledger-specs/cardano-ledger-core
-  cardano-ledger-specs/shelley/chain-and-ledger/dependencies/non-integer
-  cardano-ledger-specs/shelley/chain-and-ledger/executable-spec
-  cardano-ledger-specs/shelley/chain-and-ledger/shelley-spec-ledger-test
-  cardano-ledger-specs/shelley-ma/impl
-  cardano-ledger-specs/shelley-ma/shelley-ma-test
-  cardano-ledger-specs/alonzo/impl
-  cardano-ledger-specs/alonzo/test
-  cardano-ledger-specs/cardano-ledger-test
+  cardano-ledger-specs/eras/alonzo/impl
+  cardano-ledger-specs/eras/alonzo/test-suite
+  cardano-ledger-specs/eras/byron/chain/executable-spec
+  cardano-ledger-specs/eras/byron/crypto
+  cardano-ledger-specs/eras/byron/crypto/test
+  cardano-ledger-specs/eras/byron/ledger/executable-spec
+  cardano-ledger-specs/eras/byron/ledger/impl
+  cardano-ledger-specs/eras/byron/ledger/impl/test
+  cardano-ledger-specs/eras/shelley/impl
+  cardano-ledger-specs/eras/shelley/test-suite
+  cardano-ledger-specs/eras/shelley-ma/impl
+  cardano-ledger-specs/eras/shelley-ma/test-suite
+  cardano-ledger-specs/libs/cardano-ledger-core
+  cardano-ledger-specs/libs/cardano-protocol-tpraos
+  cardano-ledger-specs/libs/small-steps
+  cardano-ledger-specs/libs/small-steps-test
+  cardano-ledger-specs/libs/non-integral
+  cardano-ledger-specs/eras/shelley/chain-and-ledger/executable-spec
+  cardano-ledger-specs/eras/shelley/chain-and-ledger/shelley-spec-ledger-test
+  cardano-ledger-specs/eras/shelley/chain-and-ledger/dependencies/non-integer
 
   plutus/plutus-ledger-api
   plutus/plutus-tx
@@ -39,11 +42,14 @@ packages:
 --  iohk-monitoring-framework/examples
   iohk-monitoring-framework/plugins/backend-{aggregation,ekg,monitoring,trace-forwarder}
 
+  cardano-base/base-deriving-via
   cardano-base/binary
   cardano-base/binary/test
   cardano-base/cardano-crypto-class
   cardano-base/cardano-crypto-praos
   cardano-base/cardano-crypto-tests
+  cardano-base/measures
+  cardano-base/orphans-deriving-via
   cardano-base/slotting
   cardano-base/strict-containers
   hedgehog-extras
@@ -93,6 +99,12 @@ package cardano-crypto-praos
 package cardano-crypto-tests
   flags: +development
   benchmarks: True
+
+package cardano-node-chairman
+  tests: False
+
+package cardano-testnet
+  tests: False
 
 package small-steps-test
   flags: +development
@@ -145,4 +157,11 @@ source-repository-package
   type: git
   location: https://github.com/Quid2/flat.git
   tag: 95e5d7488451e43062ca84d5376b3adcc465f1cd
+
+-- fork of optparse-applicative needed for cardano-cli
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/optparse-applicative
+  tag: 7497a29cb998721a9068d5725d49461f2bba0e7a
+  --sha256: 1gvsrg925vynwgqwplgjmp53vj953qyh3wbdf34pw21c8r47w35r
 
