@@ -1,4 +1,4 @@
-index-state: 2021-04-30T00:00:00Z
+index-state: 2021-12-07T00:00:00Z
 
 packages:
   ouroboros-network/*/*.cabal
@@ -16,19 +16,15 @@ packages:
   cardano-ledger-specs/eras/shelley/test-suite
   cardano-ledger-specs/eras/shelley-ma/impl
   cardano-ledger-specs/eras/shelley-ma/test-suite
-  cardano-ledger-specs/libs/cardano-ledger-core
-  cardano-ledger-specs/libs/cardano-protocol-tpraos
-  cardano-ledger-specs/libs/small-steps
-  cardano-ledger-specs/libs/small-steps-test
-  cardano-ledger-specs/libs/non-integral
-  cardano-ledger-specs/eras/shelley/chain-and-ledger/executable-spec
-  cardano-ledger-specs/eras/shelley/chain-and-ledger/shelley-spec-ledger-test
-  cardano-ledger-specs/eras/shelley/chain-and-ledger/dependencies/non-integer
+  cardano-ledger-specs/eras/babbage/impl
+  cardano-ledger-specs/libs/*
 
+  plutus/plutus-core
   plutus/plutus-ledger-api
   plutus/plutus-tx
-  plutus/plutus-core
+  plutus/plutus-tx-plugin
   plutus/prettyprinter-configurable
+  plutus/stubs/plutus-ghc-stub
   plutus/word-array
 
   goblins/
@@ -59,12 +55,19 @@ packages:
   cardano-shell/cardano-shell
 
   cardano-node/cardano-api
-  cardano-node/cardano-node
-  cardano-node/cardano-node-chairman
-  cardano-node/cardano-config
   cardano-node/cardano-cli
   cardano-node/cardano-client-demo
+  cardano-node/cardano-git-rev
+  cardano-node/cardano-node-capi
+  cardano-node/cardano-node
+  cardano-node/cardano-node-chairman
+  cardano-node/cardano-submit-api
   cardano-node/cardano-testnet
+  cardano-node/cardano-tracer
+  cardano-node/trace-dispatcher
+  cardano-node/trace-forward
+  cardano-node/trace-resources
+
 --  cardano-node/cardano-submit-api
 
 --  cardano-db-sync/cardano-db
@@ -164,4 +167,10 @@ source-repository-package
   location: https://github.com/input-output-hk/optparse-applicative
   tag: 7497a29cb998721a9068d5725d49461f2bba0e7a
   --sha256: 1gvsrg925vynwgqwplgjmp53vj953qyh3wbdf34pw21c8r47w35r
+
+source-repository-package
+  type: git
+  location: https://github.com/input-output-hk/ekg-forward
+  tag: 297cd9db5074339a2fb2e5ae7d0780debb670c63
+  --sha256: 1zcwry3y5rmd9lgxy89wsb3k4kpffqji35dc7ghzbz603y1gy24g
 
