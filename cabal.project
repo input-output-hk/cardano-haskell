@@ -2,21 +2,21 @@ packages:
   ouroboros-network/*/*.cabal
   Win32-network
 
-  cardano-ledger-specs/eras/alonzo/impl
-  cardano-ledger-specs/eras/alonzo/test-suite
-  cardano-ledger-specs/eras/byron/chain/executable-spec
-  cardano-ledger-specs/eras/byron/crypto
-  cardano-ledger-specs/eras/byron/crypto/test
-  cardano-ledger-specs/eras/byron/ledger/executable-spec
-  cardano-ledger-specs/eras/byron/ledger/impl
-  cardano-ledger-specs/eras/byron/ledger/impl/test
-  cardano-ledger-specs/eras/shelley/impl
-  cardano-ledger-specs/eras/shelley/test-suite
-  cardano-ledger-specs/eras/shelley-ma/impl
-  cardano-ledger-specs/eras/shelley-ma/test-suite
-  cardano-ledger-specs/eras/babbage/impl
-  cardano-ledger-specs/eras/babbage/test-suite
-  cardano-ledger-specs/libs/*
+  cardano-ledger/eras/alonzo/impl
+  cardano-ledger/eras/alonzo/test-suite
+  cardano-ledger/eras/byron/chain/executable-spec
+  cardano-ledger/eras/byron/crypto
+  cardano-ledger/eras/byron/crypto/test
+  cardano-ledger/eras/byron/ledger/executable-spec
+  cardano-ledger/eras/byron/ledger/impl
+  cardano-ledger/eras/byron/ledger/impl/test
+  cardano-ledger/eras/shelley/impl
+  cardano-ledger/eras/shelley/test-suite
+  cardano-ledger/eras/shelley-ma/impl
+  cardano-ledger/eras/shelley-ma/test-suite
+  cardano-ledger/eras/babbage/impl
+  cardano-ledger/eras/babbage/test-suite
+  cardano-ledger/libs/*
 
   plutus/plutus-core
   plutus/plutus-ledger-api
