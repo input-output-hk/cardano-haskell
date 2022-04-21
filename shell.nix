@@ -35,6 +35,7 @@ in pkgs.mkShell {
     libsodium-vrf
 
     pkgs.lmdb
+    pkgs.systemd
 
     pkgs.pkg-config
     pkgs.secp256k1

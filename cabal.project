@@ -15,6 +15,7 @@ packages:
   cardano-ledger-specs/eras/shelley-ma/impl
   cardano-ledger-specs/eras/shelley-ma/test-suite
   cardano-ledger-specs/eras/babbage/impl
+  cardano-ledger-specs/eras/babbage/test-suite
   cardano-ledger-specs/libs/*
 
   plutus/plutus-core
