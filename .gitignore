@@ -12,7 +12,7 @@ cardano-byron-proxy/
 cardano-crypto/
 cardano-db-sync/
 cardano-rest/
-cardano-ledger-specs/
+cardano-ledger/
 cardano-ledger/
 cardano-node/
 cardano-prelude/
@@ -27,3 +27,5 @@ iohk-monitoring-framework/
 ouroboros-network/
 plutus/
 Win32-network/
+
+mainnet
