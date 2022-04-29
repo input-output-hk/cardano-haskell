@@ -1,23 +1,13 @@
-index-state: 2021-12-07T00:00:00Z
+index-state: 2022-02-18T00:00:00Z
 
 packages:
   ouroboros-network/*/*.cabal
   Win32-network
 
-  cardano-ledger-specs/eras/alonzo/impl
-  cardano-ledger-specs/eras/alonzo/test-suite
-  cardano-ledger-specs/eras/byron/chain/executable-spec
-  cardano-ledger-specs/eras/byron/crypto
-  cardano-ledger-specs/eras/byron/crypto/test
-  cardano-ledger-specs/eras/byron/ledger/executable-spec
-  cardano-ledger-specs/eras/byron/ledger/impl
-  cardano-ledger-specs/eras/byron/ledger/impl/test
-  cardano-ledger-specs/eras/shelley/impl
-  cardano-ledger-specs/eras/shelley/test-suite
-  cardano-ledger-specs/eras/shelley-ma/impl
-  cardano-ledger-specs/eras/shelley-ma/test-suite
-  cardano-ledger-specs/eras/babbage/impl
-  cardano-ledger-specs/libs/*
+  cardano-ledger/*/*/*.cabal
+  cardano-ledger/*/*/*/*.cabal
+  cardano-ledger/*/*/*/*/*.cabal
+  cardano-ledger/*/*/*/*/*/*.cabal
 
   plutus/plutus-core
   plutus/plutus-ledger-api
@@ -38,16 +28,8 @@ packages:
 --  iohk-monitoring-framework/examples
   iohk-monitoring-framework/plugins/backend-{aggregation,ekg,monitoring,trace-forwarder}
 
-  cardano-base/base-deriving-via
-  cardano-base/binary
-  cardano-base/binary/test
-  cardano-base/cardano-crypto-class
-  cardano-base/cardano-crypto-praos
-  cardano-base/cardano-crypto-tests
-  cardano-base/measures
-  cardano-base/orphans-deriving-via
-  cardano-base/slotting
-  cardano-base/strict-containers
+  cardano-base/*/*.cabal
+  cardano-base/*/*/*.cabal
   hedgehog-extras
 
   cardano-crypto
@@ -80,6 +62,12 @@ packages:
 --  cardano-transactions
 
 tests: True
+
+-- There is a cyclic dependency between io-sim and typed-protocols-examples
+--
+-- See ouroboros-network/cabal.project
+package io-sim
+  benchmarks: False
 
 package ouroboros-network
   flags: +cddl +asserts
@@ -129,37 +117,16 @@ package plutus-core
 
 max-backjumps: 10000
 
--- Note that generally we should not need any constraints here, since
--- individual .cabal files should specify any necessary constraints.
-constraints:
-    hedgehog >= 1.0.2
-  -- dependency of systemd-2.3.0
-  , network >= 3.1.1.1
-  -- choose versions that work with base >= 4.12
-  , hjsonpointer >= 1.5.0
-  , hjsonschema >= 1.10.0
-
--- Relax overly strict bounds on aeson in these packages which are
--- deps of cardano-addresses.
-allow-newer: hjsonschema:*, hjsonpointer:aeson
-
-allow-newer: size-based:template-haskell
-
-allow-newer: monoidal-containers:aeson
-
--- The r0 revision of this quickcheck-state-machine-0.7 on Hackage adds a lower
--- bound on the text package: >=1.2.4.0. However, 1.2.4.0 doesn't support GHC
--- 8.10, 1.2.4.1 will, but that hasn't been released yet. GHC 8.10 is bundled
--- with 1.2.3.2, so override quickcheck-state-machine's lower bound to support
--- an "older" version of text. See
--- https://github.com/advancedtelematic/quickcheck-state-machine/issues/371
-allow-older: quickcheck-state-machine:text
+allow-newer:
+    *:aeson
+  , size-based:template-haskell
 
 -- Drops an instance breaking our code. Should be released to Hackage eventually.
 source-repository-package
   type: git
   location: https://github.com/Quid2/flat.git
-  tag: 95e5d7488451e43062ca84d5376b3adcc465f1cd
+  tag: ee59880f47ab835dbd73bea0847dab7869fc20d8
+  --sha256: 1lrzknw765pz2j97nvv9ip3l1mcpf2zr4n56hwlz0rk7wq7ls4cm
 
 -- fork of optparse-applicative needed for cardano-cli
 source-repository-package
@@ -174,3 +141,14 @@ source-repository-package
   tag: 297cd9db5074339a2fb2e5ae7d0780debb670c63
   --sha256: 1zcwry3y5rmd9lgxy89wsb3k4kpffqji35dc7ghzbz603y1gy24g
 
+source-repository-package
+  type: git
+  location: https://github.com/HeinrichApfelmus/threepenny-gui
+  tag: e3bb8283fc7d2e8aa374eea29426002e8dcd67a8
+  --sha256: 0nf836b552asgpwn2gxwl7yd7ssdhb1wkvdqz6s4dpzqnlpyivx9
+
+source-repository-package
+  type: git
+  location: https://github.com/vshabanov/ekg-json
+  tag: 00ebe7211c981686e65730b7144fbf5350462608
+  --sha256: 1zvjm3pb38w0ijig5wk5mdkzcszpmlp5d4zxvks2jk1rkypi8gsm
