@@ -22,10 +22,14 @@ cardano-transactions/
 cardano-wallet/
 flat/
 goblins/
+haskell-lmdb/
 hedgehog-extras/
+io-sim/
 iohk-monitoring-framework/
+lmdb-simple/
 ouroboros-network/
 plutus/
+typed-protocols/
 Win32-network/
 
 mainnet

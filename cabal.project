@@ -4,6 +4,14 @@ packages:
   ouroboros-network/*/*.cabal
   Win32-network
 
+  io-sim/io-classes
+  io-sim/io-sim
+  io-sim/strict-stm
+
+  typed-protocols/typed-protocols
+  typed-protocols/typed-protocols-cborg
+  typed-protocols/typed-protocols-examples
+
   cardano-ledger/*/*/*.cabal
   cardano-ledger/*/*/*/*.cabal
   cardano-ledger/*/*/*/*/*.cabal
@@ -49,6 +57,10 @@ packages:
   cardano-node/trace-dispatcher
   cardano-node/trace-forward
   cardano-node/trace-resources
+
+  lmdb-simple
+
+  haskell-lmdb
 
 --  cardano-node/cardano-submit-api
 
