@@ -73,6 +73,9 @@ packages:
 --  cardano-addresses/*/*.cabal
 --  cardano-transactions
 
+  haskell-lmdb
+  lmdb-simple
+
 tests: True
 
 -- There is a cyclic dependency between io-sim and typed-protocols-examples
