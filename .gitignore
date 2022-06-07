@@ -24,8 +24,10 @@ flat/
 goblins/
 hedgehog-extras/
 iohk-monitoring-framework/
+io-sim/
 ouroboros-network/
 plutus/
+typed-protocols/
 Win32-network/
 
 mainnet

@@ -60,6 +60,9 @@ packages:
 --  cardano-wallet/lib/*/*.cabal
 --  cardano-addresses/*/*.cabal
 --  cardano-transactions
+  
+  io-sim/*/*.cabal
+  typed-protocols/*/*.cabal
 
 tests: True
 
