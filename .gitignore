@@ -5,6 +5,7 @@ cabal.project.local~
 dist-newstyle/
 bin/cardano-repo-tool
 
+anti-diffs/
 cardano-addresses/
 cardano-base/
 cardano-benchmarking/
@@ -21,12 +22,14 @@ cardano-sl-x509/
 cardano-transactions/
 cardano-wallet/
 flat/
+fs-sim/
 goblins/
 haskell-lmdb/
 hedgehog-extras/
 io-sim/
 iohk-monitoring-framework/
 lmdb-simple/
+ouroboros-consensus/
 ouroboros-network/
 plutus/
 typed-protocols/
